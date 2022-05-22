@@ -1,7 +1,7 @@
 <?php 
 $mot = isset($_POST["mot"])? $_POST["mot"] : "";
 if (isset($_POST["buttonR"])) {
-    $database = "Omnes";
+    $database = "omnes";
     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
