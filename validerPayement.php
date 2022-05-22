@@ -6,7 +6,7 @@ $date = isset($_POST["date"])? $_POST["date"] : "";
 $code = isset($_POST["code"])? $_POST["code"] : "";
 
 $erreur = "";
-if ($carte >=1 && $carte <=4) {
+if (empty($carte)) {
     $erreur .= "Le champ carte est vide. <br>";
 }
 if ($num == "") {
@@ -32,9 +32,9 @@ if (isset($_POST["payer"])) {
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
     if ($db_found) {
-    $getId="SELECT PayID FROM membre WHERE mID=(SELECT cID FROM client)";
+    $getID="SELECT PayID FROM membre WHERE mID=(SELECT cID FROM client)";
     $sql = "INSERT INTO cartepayement (cpID, Numero, Nom, Date, Code)
-    VALUES($getId, '$_POST[num]', '$_POST[nom]', '$_POST[date]', '$_POST[code]')";
+    VALUES($getID, '$_POST[num]', '$_POST[nom]', '$_POST[date]', '$_POST[code]')";
     $result =mysqli_query($db_handle, $sql);
     }
     else{
