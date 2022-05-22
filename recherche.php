@@ -12,7 +12,7 @@
     <form action="Traitement.php" method="post">
     <div class="search">
         <input type="text" maxlength="12" placeholder="Rechercher" name="mot">
-        <input type="submit" value="Rechercher" name="buttonR">
+        <input type="submit" value="Rechercher" name="search">
     </div>
     </form>
 </body>
