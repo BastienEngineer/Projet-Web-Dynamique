@@ -37,6 +37,15 @@
     color: #555;
 }
 
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-color: #4ca1af;
+    background-image: linear-gradient(135deg, #4ca1af 0%, #c4e0e5 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* Change navbar styling on small viewports */
 @media (max-width: 991.98px) {
