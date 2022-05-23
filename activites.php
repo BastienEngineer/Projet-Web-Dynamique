@@ -39,7 +39,7 @@
 
 <!-- Section -->
 <div class="container my-5 py-5">
-
+<h3 class="text-center text-white my-5 py-5">Activités sportives</h3>
 <!--Carousel Wrapper-->
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
@@ -54,14 +54,6 @@
           <span class="sr-only">Suivant</span>
         </a>
 
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-      <li data-target="#multi-item-example" data-slide-to="1"></li>
-      <li data-target="#multi-item-example" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
-
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
 
@@ -74,13 +66,13 @@
             </div>
             <div class="col-md-4">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                        <img class="card-img-top" src="img/musculation.jpg"
                         alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                                 <h4 class="card-title">Musculation</h4>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                                 card's content.</p>
-                                <a class="btn btn-primary">Button</a>
+                                <a class="btn btn-primary text-white">Sélectionner</a>
                         </div>
                     </div>
                 </div>
@@ -94,13 +86,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                    <img class="card-img-top" src="img/fitness.jpg"
                         alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h4 class="card-title">Fitness</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary">Button</a>
+                            <a class="btn btn-primary text-white">Sélectionner</a>
                         </div>
                     </div>
                 </div>
@@ -114,13 +106,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                    <img class="card-img-top" src="img/biking.jpg"
                         alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h4 class="card-title">Biking</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary">Button</a>
+                            <a class="btn btn-primary text-white">Sélectionner</a>
                         </div>
                     </div>
                 </div>
@@ -134,13 +126,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                    <img class="card-img-top" src="img/cardio.jpg"
                         alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h4 class="card-title"> Cardio-Training</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary">Button</a>
+                            <a class="btn btn-primary text-white">Sélectionner</a>
                         </div>
                     </div>
                 </div>
@@ -154,13 +146,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                    <img class="card-img-top" src="img/collectif.png"
                         alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h4 class="card-title">Cours Collectifs</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary">Button</a>
+                            <a class="btn btn-primary text-white">Sélectionner</a>
                         </div>
                     </div>
                 </div>
