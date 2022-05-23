@@ -29,6 +29,11 @@
         float: left;
         background-color: rgb(210,210,210);
         }
+        input.l
+        {
+            transform: scale(1);
+            margin: 20px;
+        }
     </style>
 </head>
 
@@ -52,18 +57,18 @@
                     <td id="case11" >Samedi PM</td>
                 </tr>
                 <tr>
-                    <td id="case12" onclick="main(case12)"><input type="hidden" value ="c" name="c1"></td>
-                    <td id="case13" onclick="main(case13)" name="2"></td>
-                    <td id="case14" onclick="main(case14)" name="3"></td>
-                    <td id="case15" onclick="main(case15)" name="4"></td>
-                    <td id="case16" onclick="main(case16)" name="5"></td>
-                    <td id="case17" onclick="main(case17)" name="6"></td>
-                    <td id="case18" onclick="main(case18)" name="7"></td>
-                    <td id="case19" onclick="main(case19)" name="8"></td>
-                    <td id="case20" onclick="main(case20)" name="9"></td>
-                    <td id="case21" onclick="main(case21)" name="10"></td>
-                    <td id="case22" onclick="main(case22)" name="11"></td>
-                    <td id="case23" onclick="main(case23)" name="12"></td>
+                    <td id="case12" ><input class="l" id="btn0" type="checkbox" value ="1" name="case" onclick="main(case12)"></td>
+                    <td id="case13" ><input class="l" id="btn1" type="checkbox" value ="2" name="case" onclick="main(case13)"></td>
+                    <td id="case14" ><input class="l" id="btn2" type="checkbox" value ="3" name="case" onclick="main(case14)"></td>
+                    <td id="case15" ><input class="l" id="btn3" type="checkbox" value ="4" name="case" onclick="main(case15)"></td>
+                    <td id="case16" ><input class="l" id="btn4" type="checkbox" value ="5" name="case" onclick="main(case16)"></td>
+                    <td id="case17" ><input class="l" id="btn5" type="checkbox" value ="6" name="case" onclick="main(case17)"></td>
+                    <td id="case18" ><input class="l" id="btn6" type="checkbox" value ="7" name="case" onclick="main(case18)"></td>
+                    <td id="case19" ><input class="l" id="btn7" type="checkbox" value ="8" name="case" onclick="main(case19)"></td>
+                    <td id="case20" ><input class="l" id="btn8" type="checkbox" value ="9" name="case" onclick="main(case20)"></td>
+                    <td id="case21" ><input class="l" id="btn9" type="checkbox" value ="10" name="case" onclick="main(case21)"></td>
+                    <td id="case22" ><input class="l" id="btn10" type="checkbox" value ="11" name="case" onclick="main(case22)"></td>
+                    <td id="case23" ><input class="l" id="btn11" type="checkbox" value ="12" name="case" onclick="main(case23)"></td>
                 </tr>
                 </table>
 
