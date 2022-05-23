@@ -53,7 +53,7 @@
 <!-- Section Evénement -->
 <section id="section" class="py-5 mt-5 text-center">
 <div class="container">
-    <h2 class="fw-light">Evénement de la semaine</h2>
+    <h2 class="fw-light my-3 py-3">Evénement de la semaine</h2>
       <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicateurs -->
         <ol class="carousel-indicators">
@@ -114,10 +114,136 @@
         <div class="py-5">
             <p class="lead">Lorem ipsum dolor sit amet, <strong class="font-weight-bold">consectetur adipisicing </strong>elit. Explicabo consectetur odio voluptatum facere animi temporibus, distinctio tempore enim corporis quam <strong class="font-weight-bold">recusandae </strong>placeat! Voluptatum voluptate, ex modi illum quas nam distinctio.</p>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a class="btn btn-outline-light px-4 rounded-0 js-scroll-trigger" href="#section">Back to top</a>
+            <a id="b1" class="btn btn-outline-light px-4 rounded-0 js-scroll-trigger" href="#video">Next</a>
         </div>
     </div>
 </div>
+
+<!-- Video + Compteur -->
+<section class="bg-light py-5" id="video">
+  <div class="container">
+    <div class="text-center py-5">
+        <h2 class="">Présentation de notre famous coach</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+              <div class="py-5">
+                <iframe width="360" height="320" src="https://www.youtube.com/embed/bvCTdOoq3Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="py-5">
+              <iframe width="360" height="320" src="https://www.youtube.com/embed/BMPps30ZQZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="py-5">
+              <iframe width="360" height="320" src="https://www.youtube.com/embed/0yT5DsGZErc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+  </div>
+  <section id="counter" class="py-5 my-5">
+    <div class="container">
+      <div class="row text-center">
+      <div class="col-md-3">
+        <i class="fa fa-youtube fa-2x"></i>
+        <h2 class="counter">8580000</h2>
+         <p>Abonnés</p>
+      </div>
+  
+      <div class="col-md-3">
+        <i class="fa fa-eye fa-2x"></i>
+        <h2 class="counter">3066447538</h2>
+        <p>Vues</p>
+      </div>
+  
+      <div class="col-md-3">
+        <i class="fa fa-camera fa-2x"></i>
+        <h2 class="counter">1356</h2>
+        <p>Videos</p>
+      </div>
+  
+      <div class="col-md-3">
+        <i class="fa fa-thumbs-up fa-2x"></i>
+        <h2 class="counter">6759202</h2>
+        <p>Likes</p>
+      </div>
+    </div>
+    </div>
+    </section>
+</section>
+
+<script>
+
+$(document).ready(function() {
+
+$("#b1").click(function(){
+    $('.counter').each(function () {
+      $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 5000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+      });
+}); 
+  
+}); 
+
+});  
+
+</script>
+
+<!-- Team -->
+<section class="text-center text-white py-5" id="team">
+  <div class="container">
+    <div class="my-5">
+      <h1>Présentation de nos coachs sportifs</h1>
+      <p class="text-muted">Voici notre meilleur équipe !</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="img/tibo.jpeg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">Tibo InShape</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="img/.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">A choisir</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">A choisir</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="content mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">A choisir</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer-->
 <footer id="footer" class="bg-white">
