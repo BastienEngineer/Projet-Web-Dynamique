@@ -38,6 +38,15 @@ if (isset($_POST["admin"])) {
     echo "</tr>";
     }
     echo "</table>";
+    session_start();
+    $session="Connecte";
+    if(isset($_SESSION["1"]))
+    {
+        echo "<form action='deconnexion.php'>";
+        echo "<input type='submit' name='deconnexion' value='Se deconnecter'>";
+        echo "</form>";
+    }
+   
     }
     else{
         echo "<br>Database not found";
@@ -46,3 +55,19 @@ if (isset($_POST["admin"])) {
     mysqli_close($db_handle);
 }  
 ?>
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <span> Etat de l utilisateur 
+        <?php //echo $session; ?>
+</span>
+
+</body>
+</html>
+-->
+
