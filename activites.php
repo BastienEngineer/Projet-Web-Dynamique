@@ -183,37 +183,81 @@
                 $sql="";
                 if( isset($_POST['b1'])  ){
                     $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "musculation"';
+                    if($d)
+                    {
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo " " .$data['Nom'];
+                        }
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
                   }
                   if( isset($_POST['b2'])  ){
                     $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "fitness"';
+                    if($d)
+                    {
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo " " .$data['Nom'];
+                        }
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
                   }
                   if( isset($_POST['b3'])  ){
                     $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "biking"';
+                    if($d)
+                    {
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo " " .$data['Nom'];
+                        }
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
                 
                   }
                   if( isset($_POST['b4'])  ){
                     $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "cardio"';
+                    if($d)
+                    {
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo " " .$data['Nom'];
+                        }
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
                 
                   }
                   if( isset($_POST['b5'])  ){
                     $sql="SELECT Nom,Prenom FROM coach WHERE Specialite = 'collectif'";
-                
-                }
-                else
-                {
-                    $sql="SELECT * from coach";
-                }
-                if($d)
-                {
-                    $req1=mysqli_query($conn, $sql); 
-                    while($data=mysqli_fetch_assoc($req1))
+                    if($d)
                     {
-                        echo " " .$data['Nom'];
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo " " .$data['Nom'];
+                        }
                     }
-                }
-                else
-                {
-                    echo " error";
+                    else
+                    {
+                        echo " error";
+                    }
+                
                 }
                 
                 mysqli_close($conn);
