@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
@@ -36,8 +37,15 @@ if (isset($_POST["admin"])) {
     echo "<td>" . $data['Nom'] . "</td>";
     echo "<td>" . $data['Prenom'] . "</td>";
     echo "</tr>";
+    $_SESSION['aID']=$data['aID'];
+    $e=$_SESSION['aID'];
     }
     echo "</table>";
+    $res=mysqli_query($db_handle, "SELECT mID,Prenom FROM client");
+    while ($data = mysqli_fetch_assoc($res)) {
+        $d=$data['mID'];
+        echo "<a href='communiquer.php?mID=$d'><br>" . $data['Prenom'] . "</br>";
+    }
     }
     else{
         echo "<br>Database not found";
