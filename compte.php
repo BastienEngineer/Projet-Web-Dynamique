@@ -7,13 +7,9 @@
 </head>
 <body>
     <form action="connexion.php" method="post">  
-        <!-- <label for="email">Login : </label> -->  
-        <!-- <input type="email" id="email" name="log"/><br/>   -->
-        <label for="text">Login : </label>  
-        <input type="text" name="log"/><br/>
-        <label for="password">Mot de passe : </label>  
-        <input type="password" id="password" name="password"/><br/>
-        <input type="submit" value="Se connecter" name="connexion">    
+        <input type="submit" value="Admin" name="connexion">  
+        <input type="submit" value="Coach" name="connexion">  
+        <input type="submit" value="Client" name="connexion"> 
     </form>
 </body>
 </html>
