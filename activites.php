@@ -72,7 +72,9 @@
                                 <h4 class="card-title">Musculation</h4>
                                 <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                                 card's content.</p>
-                                <a class="btn btn-primary text-white">Sélectionner</a>
+                                <form action="" method="post">
+                                    <input name="b1" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -92,7 +94,9 @@
                             <h4 class="card-title">Fitness</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b2" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -112,7 +116,9 @@
                             <h4 class="card-title">Biking</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b3" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -132,7 +138,9 @@
                             <h4 class="card-title"> Cardio-Training</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b4" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -152,7 +160,9 @@
                             <h4 class="card-title">Cours Collectifs</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b5" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -163,6 +173,53 @@
 </div>
       <!--/.First slide-->
 
+      <table>
+            <tr>
+                <!--FETCHING DATA FROM EACH
+                    ROW OF EVERY COLUMN-->
+                <td><?php
+                $conn=mysqli_connect('localhost','root','');
+                $d=mysqli_select_db($conn,'omnes');
+                $sql="";
+                if( isset($_POST['b1'])  ){
+                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "musculation"';
+                  }
+                  if( isset($_POST['b2'])  ){
+                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "fitness"';
+                  }
+                  if( isset($_POST['b3'])  ){
+                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "biking"';
+                
+                  }
+                  if( isset($_POST['b4'])  ){
+                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "cardio"';
+                
+                  }
+                  if( isset($_POST['b5'])  ){
+                    $sql="SELECT Nom,Prenom FROM coach WHERE Specialite = 'collectif'";
+                
+                }
+                else
+                {
+                    $sql="SELECT * from coach";
+                }
+                if($d)
+                {
+                    $req1=mysqli_query($conn, $sql); 
+                    while($data=mysqli_fetch_assoc($req1))
+                    {
+                        echo " " .$data['Nom'];
+                    }
+                }
+                else
+                {
+                    echo " error";
+                }
+                
+                mysqli_close($conn);
+                ?></td>
+            </tr>
+        </table>
 </div>
 
 <!-- Footer-->
