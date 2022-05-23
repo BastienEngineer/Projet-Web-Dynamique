@@ -40,5 +40,4 @@ if (isset($_POST["client"])) {
     //fermer la connexion
     mysqli_close($db_handle);
 }  
-
 ?>
