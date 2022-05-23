@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -21,7 +22,7 @@
 
 <!-- Navigation-->
 <nav id="nav" class="navbar navbar-expand-lg fixed-top py-3">
-    <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold"><img src="img/logo.png" alt="Logo" width="180"> </a>
+    <div class="container"><a href="index.html" class="navbar-brand text-uppercase font-weight-bold"><img src="img/logo.png" alt="Logo" width="180"> </a>
         <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
         
         <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -36,26 +37,73 @@
     </div>
 </nav>
 
+<!-- Header -->
 <header class="masthead">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
         <div class="col-12 text-center text-white">
-            <h1 class="fw-light">Vertically Centered Masthead Content</h1>
-            <p class="lead">A great starter layout for a landing page</p>
-            <a href="#content" class="btn btn-outline-light btn-lg js-scroll-trigger" role="button">Découvrir</a>
+            <h1 class="fw-light">Bienvenue sur OMNES Sports</h1>
+            <p class="lead">Un super site de réservation de séance de sport</p>
+            <a href="#section" class="btn btn-outline-light btn-lg js-scroll-trigger">Découvrir</a>
         </div>
         </div>
     </div>
 </header>
 
-<section id="content" class="py-5">
+<!-- Section Evénement -->
+<section id="section" class="py-5 mt-5 text-center">
 <div class="container">
-    <h2 class="fw-light">Page Content</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab nulla dolorum autem nisi officiis
-    blanditiis voluptatem hic, assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat
-    reprehenderit expedita.</p>
+    <h2 class="fw-light my-3 py-3">Evénement de la semaine</h2>
+      <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- Indicateurs -->
+        <ol class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ol>
+    
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="4000">
+            <img src="https://www.pierre-giraud.com/bootstrap-carrousel-slide-1.jpg" alt="Los Angeles" style="width:100%;">
+          </div>
+    
+          <div class="carousel-item" data-interval="4000">
+            <img src="https://www.pierre-giraud.com/bootstrap-carrousel-slide-2.jpg" alt="Chicago" style="width:100%;">
+          </div>
+        
+          <div class="item" data-interval="4000">
+            <img src="" alt="New York" style="width:100%;">
+          </div>
+        </div>
+    
+        <!-- Contrôles -->
+        <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Suivant</span>
+        </a>
+      </div>
 </div>
 </section>
+
+<!-- Demo section 1 -->
+<section class="py-5 d-flex align-items-center" id="one">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                <h2 class="h1 mb-4">Demo section 1</h2>
+                <p class="font-italic mb-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <!-- Scroll to top -->
+                <a class="btn btn-outline-light px-4 rounded-0 js-scroll-trigger" href="">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Section -->
 <div class="container">
     <div class="pt-5 text-white">
@@ -66,9 +114,136 @@
         <div class="py-5">
             <p class="lead">Lorem ipsum dolor sit amet, <strong class="font-weight-bold">consectetur adipisicing </strong>elit. Explicabo consectetur odio voluptatum facere animi temporibus, distinctio tempore enim corporis quam <strong class="font-weight-bold">recusandae </strong>placeat! Voluptatum voluptate, ex modi illum quas nam distinctio.</p>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a id="b1" class="btn btn-outline-light px-4 rounded-0 js-scroll-trigger" href="#video">Next</a>
         </div>
     </div>
 </div>
+
+<!-- Video + Compteur -->
+<section class="bg-light py-5" id="video">
+  <div class="container">
+    <div class="text-center py-5">
+        <h2 class="">Présentation de notre famous coach</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+              <div class="py-5">
+                <iframe width="360" height="320" src="https://www.youtube.com/embed/bvCTdOoq3Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="py-5">
+              <iframe width="360" height="320" src="https://www.youtube.com/embed/BMPps30ZQZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="py-5">
+              <iframe width="360" height="320" src="https://www.youtube.com/embed/0yT5DsGZErc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+  </div>
+  <section id="counter" class="py-5 my-5">
+    <div class="container">
+      <div class="row text-center">
+      <div class="col-md-3">
+        <i class="fa fa-youtube fa-2x"></i>
+        <h2 class="counter">8580000</h2>
+         <p>Abonnés</p>
+      </div>
+  
+      <div class="col-md-3">
+        <i class="fa fa-eye fa-2x"></i>
+        <h2 class="counter">3066447538</h2>
+        <p>Vues</p>
+      </div>
+  
+      <div class="col-md-3">
+        <i class="fa fa-camera fa-2x"></i>
+        <h2 class="counter">1356</h2>
+        <p>Videos</p>
+      </div>
+  
+      <div class="col-md-3">
+        <i class="fa fa-thumbs-up fa-2x"></i>
+        <h2 class="counter">6759202</h2>
+        <p>Likes</p>
+      </div>
+    </div>
+    </div>
+    </section>
+</section>
+
+<script>
+
+$(document).ready(function() {
+
+$("#b1").click(function(){
+    $('.counter').each(function () {
+      $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 5000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+      });
+}); 
+  
+}); 
+
+});  
+
+</script>
+
+<!-- Team -->
+<section class="text-center text-white py-5" id="team">
+  <div class="container">
+    <div class="my-5">
+      <h1>Présentation de nos coachs sportifs</h1>
+      <p class="text-muted">Voici notre meilleur équipe !</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="img/tibo.jpeg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">Tibo InShape</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="img/.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">A choisir</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">A choisir</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="img-block mb-5">
+          <img src="" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+          <div class="content mt-2">
+            <h4 class="mt-4 font-weight-medium mb-0">A choisir</h4>
+            <p class="text-muted">Coach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer-->
 <footer id="footer" class="bg-white">
