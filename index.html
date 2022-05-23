@@ -50,13 +50,43 @@
     </div>
 </header>
 
-<!-- Section -->
-<section id="section" class="py-5 mt-5">
+<!-- Section Evénement -->
+<section id="section" class="py-5 mt-5 text-center">
 <div class="container">
-    <h2 class="fw-light">Page Content</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab nulla dolorum autem nisi officiis
-    blanditiis voluptatem hic, assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat
-    reprehenderit expedita.</p>
+    <h2 class="fw-light">Evénement de la semaine</h2>
+      <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- Indicateurs -->
+        <ol class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ol>
+    
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="4000">
+            <img src="https://www.pierre-giraud.com/bootstrap-carrousel-slide-1.jpg" alt="Los Angeles" style="width:100%;">
+          </div>
+    
+          <div class="carousel-item" data-interval="4000">
+            <img src="https://www.pierre-giraud.com/bootstrap-carrousel-slide-2.jpg" alt="Chicago" style="width:100%;">
+          </div>
+        
+          <div class="item" data-interval="4000">
+            <img src="" alt="New York" style="width:100%;">
+          </div>
+        </div>
+    
+        <!-- Contrôles -->
+        <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Suivant</span>
+        </a>
+      </div>
 </div>
 </section>
 
