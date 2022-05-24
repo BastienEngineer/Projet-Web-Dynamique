@@ -71,7 +71,7 @@ table
            '<tr>  
             <td>'.$row["Nom"].'</td>  
             <td>'.$row["Prenom"].'</td>';
-            echo "<td>" ."<img src='$image' height='80' width='120'>" . "</td>";
+            echo "<td>" ."<img src='$image' height='80' width='80'>" . "</td>";
             echo '  
             <td>'.$row["Specialite"].'</td>  
             <td>'.$row["Mail"].'</td>  
