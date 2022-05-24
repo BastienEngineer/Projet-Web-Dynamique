@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 23 mai 2022 à 15:53
+-- Généré le :  mar. 24 mai 2022 à 16:37
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `Prenom` varchar(255) NOT NULL,
   `Mail` varchar(255) NOT NULL,
   PRIMARY KEY (`aID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `admin`
@@ -43,7 +43,9 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 INSERT INTO `admin` (`aID`, `Nom`, `Prenom`, `Mail`) VALUES
 (1, 'Thomas', 'Bastien', 'admin@gmail.com'),
-(2, 'Thomas', 'Louis', 'admin2@gmail.com');
+(2, 'Thomas', 'Louis', 'admin2@gmail.com'),
+(3, 'Chen', 'Eric', 'admin3@gmail.com'),
+(4, 'Yu', 'Shihao', 'admin4@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -54,19 +56,19 @@ INSERT INTO `admin` (`aID`, `Nom`, `Prenom`, `Mail`) VALUES
 DROP TABLE IF EXISTS `cb`;
 CREATE TABLE IF NOT EXISTS `cb` (
   `cbID` int(11) NOT NULL AUTO_INCREMENT,
-  `Numero` int(16) NOT NULL,
+  `Numero` varchar(255) NOT NULL,
   `Nom` varchar(255) NOT NULL,
   `Date` date NOT NULL,
   `Code` int(3) NOT NULL,
   PRIMARY KEY (`cbID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `cb`
 --
 
 INSERT INTO `cb` (`cbID`, `Numero`, `Nom`, `Date`, `Code`) VALUES
-(1, 11111, 's', '2022-05-24', 0);
+(20, '4532908893850456', 'Coupart', '2025-02-22', 936);
 
 -- --------------------------------------------------------
 
@@ -88,15 +90,15 @@ CREATE TABLE IF NOT EXISTS `client` (
   `Tel` varchar(255) NOT NULL,
   `CarteE` int(10) NOT NULL,
   PRIMARY KEY (`mID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`mID`, `Nom`, `Prenom`, `Mail`, `MotdePasse`, `Adresse`, `Ville`, `Postal`, `Pays`, `Tel`, `CarteE`) VALUES
-(1, 'Thomas', 'Bastien', 'bast@gmail.com', '123', 'rue de', 'Paris', 75000, 'France', '0101', 101001),
-(4, 'thomas', 'louis', 'louis@gmail.com', '123', 'rue ', 'Paris', 75000, 'France', '06', 1111);
+(20, 'Coupart', 'Clarice', 'clarice@gmail.com ', 'clarice', 'Grand Rue', 'Marseille', 13005, 'France', '0494747768', 127675),
+(21, 'Gosselin', 'Landers', 'landers@gmail.com ', 'landers', 'Place de la Gare', 'Colombes', 92700, 'France', '0186680100', 173088);
 
 -- --------------------------------------------------------
 
@@ -114,7 +116,24 @@ CREATE TABLE IF NOT EXISTS `coach` (
   `Mail` varchar(255) NOT NULL,
   `Bureau` varchar(255) NOT NULL,
   PRIMARY KEY (`cID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
+
+--
+-- Déchargement des données de la table `coach`
+--
+
+INSERT INTO `coach` (`cID`, `Nom`, `Prenom`, `Photo`, `Specialite`, `Mail`, `Bureau`) VALUES
+(1, 'Tibo', 'Inshape', 'img/tibo.jpeg', 'musculation', 'tibo@gmail.com', 'G015'),
+(2, 'Mua', 'Sissy', 'img/sissy.jpg', 'fitness', 'sissy@gmail.com', 'G011'),
+(3, 'Sahili', 'Nassim', 'img/nassim.jpg', 'biking', 'nassim@gmail.com', 'G009'),
+(4, 'Sansone', 'Leslie', 'img/leslie.jpg', 'cardio', 'leslie@gmail.com', 'G016'),
+(5, 'Smith', 'Jessica', 'img/jessica.jpg', 'collectif', 'jessica@gmail.com', 'G012'),
+(6, 'Durant', 'Kevin', 'img/kevin.jpg', 'basket', 'kevin@gmail.com', 'G007'),
+(7, 'Cristiano', 'Ronaldo ', 'img/ronaldo.jpg', 'football', 'ronaldo@gmail.com', 'G001'),
+(8, 'Dupont', 'Antoine', 'img/antoine.jpg', 'rugby', 'antoine@gmail.com', 'G002'),
+(9, 'Nadal', 'Rafael ', 'img/nadal.jpg', 'tennis', 'rafael@gmail.com', 'G005'),
+(10, 'Manaudou', 'Laure', 'img/laure.jpg', 'natation', 'laure@gmail.com', 'G008'),
+(11, 'Rosset', 'Matthieu', 'img/matthieu.jpg', 'plongeon', 'matthieu@gmail.com', 'G003');
 
 -- --------------------------------------------------------
 
@@ -129,32 +148,7 @@ CREATE TABLE IF NOT EXISTS `echange` (
   `dest` int(11) NOT NULL,
   `emet` int(11) NOT NULL,
   PRIMARY KEY (`msgID`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf32;
-
---
--- Déchargement des données de la table `echange`
---
-
-INSERT INTO `echange` (`msgID`, `sms`, `dest`, `emet`) VALUES
-(11, 'aaz', 1, 1),
-(12, 'eet oui \r\n', 1, 1),
-(13, 'eet oui \r\n', 1, 1),
-(14, 'eet oui \r\n', 1, 1),
-(15, 'ckdnfk', 1, 1),
-(16, 'ckdnfk', 1, 1),
-(17, 'ckdnfk', 1, 1),
-(18, 'ckdnfk', 1, 1),
-(19, 'ckdnfk', 1, 1),
-(20, 'ckdnfk', 1, 1),
-(21, 'ckdnfk', 1, 1),
-(22, 'ckdnfk', 1, 1),
-(23, 'ckdnfk', 1, 1),
-(24, 'ckdnfk', 1, 1),
-(25, 'ckdnfk', 1, 1),
-(26, 'ckdnfk', 1, 1),
-(27, 'ckdnfk', 1, 1),
-(28, 'coucou toi ', 1, 1),
-(29, 'coucou \r\n', 4, 2);
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf32;
 
 --
 -- Contraintes pour les tables déchargées
