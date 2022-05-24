@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td>Numero de votre CB</td>
-            <td><input type="text" pattern="[0-9]{16}" name="num"></td>
+            <td><input type="text" placeholder="0000000000000000" pattern="[0-9]{16}" name="num"></td>
         </tr>
         <tr>
             <td>Nom de votre CB</td>
