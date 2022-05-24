@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $carte = isset($_POST["carte"])? $_POST["carte"] : "";
 $num = isset($_POST["num"])? $_POST["num"] : "";
 $nom = isset($_POST["nom"])? $_POST["nom"] : "";
@@ -25,22 +26,52 @@ if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
     header("Location:payement.php"); 
 }
-
-if (isset($_POST["payer"])) {
-    $database = "omnes";
-    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-    $db_handle = mysqli_connect('localhost', 'root', '');
-    $db_found = mysqli_select_db($db_handle, $database);
-    if ($db_found) {
-    $getID="SELECT PayID FROM membre WHERE mID=(SELECT cID FROM client)";
-    $sql = "INSERT INTO cartepayement (cpID, Numero, Nom, Date, Code)
-    VALUES($getID, '$_POST[num]', '$_POST[nom]', '$_POST[date]', '$_POST[code]')";
-    $result =mysqli_query($db_handle, $sql);
-    }
-    else{
-        echo "<br>Database not found";
-    }
-    //fermer la connexion
-    mysqli_close($db_handle);
-}  
+else
+{
+    if(isset($_POST["payer"])) {
+        $database = "omnes";
+        //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+        $db_handle = mysqli_connect('localhost', 'root', '');
+        $db_found = mysqli_select_db($db_handle, $database);
+        if ($db_found) {
+        $e=$_SESSION['mID'];
+        $getID="SELECT cbID FROM cb WHERE cbID= (SELECT mID FROM client WHERE mID=$e)";
+        $r=mysqli_query($db_handle,$getID);
+        if (mysqli_num_rows($r)) 
+        {
+            $res =mysqli_query($db_handle, "SELECT * FROM cb WHERE Numero='$_POST[num]' AND Nom='$_POST[nom]' AND Date='$_POST[date]' AND Code='$_POST[code]'");
+            if (mysqli_num_rows($res)) 
+            {
+            echo "<table border=\"1\">";
+            echo "<tr>";
+            echo "<th>" . "Numero" . "</th>";
+            echo "<th>" . "Nom" . "</th>";
+            echo "</tr>";
+            while ($data = mysqli_fetch_assoc($res)) {
+            echo "<tr>";
+            echo "<td>" . $data['Numero'] . "</td>";
+            echo "<td>" . $data['Nom'] . "</td>";
+            echo "</tr>";
+            }
+            echo "</table>";
+            }
+            else
+            {
+                header("Location:payement.php");
+            }
+        }
+        else
+        {
+            $sql = "INSERT INTO cb (cbID, Numero, Nom, Date, Code)
+            VALUES($e, '$_POST[num]', '$_POST[nom]', '$_POST[date]', '$_POST[code]')";
+            $result =mysqli_query($db_handle, $sql);
+        }
+        }
+        else{
+            echo "<br>Database not found";
+        }
+        //fermer la connexion
+        mysqli_close($db_handle);
+    } 
+} 
 ?>
