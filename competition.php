@@ -215,7 +215,7 @@
                             echo "<td>" . $data['Nom'] . "</td>";
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
-                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
                             echo "<td>" . $data['Specialite'] . "</td>";
                             echo "<td>" . $data['Mail'] . "</td>";
                             echo "<td>" . $data['Bureau'] . "</td>";
@@ -258,7 +258,7 @@
                             echo "<td>" . $data['Nom'] . "</td>";
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
-                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
                             echo "<td>" . $data['Specialite'] . "</td>";
                             echo "<td>" . $data['Mail'] . "</td>";
                             echo "<td>" . $data['Bureau'] . "</td>";
@@ -301,7 +301,7 @@
                             echo "<td>" . $data['Nom'] . "</td>";
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
-                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
                             echo "<td>" . $data['Specialite'] . "</td>";
                             echo "<td>" . $data['Mail'] . "</td>";
                             echo "<td>" . $data['Bureau'] . "</td>";
@@ -345,7 +345,7 @@
                             echo "<td>" . $data['Nom'] . "</td>";
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
-                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
                             echo "<td>" . $data['Specialite'] . "</td>";
                             echo "<td>" . $data['Mail'] . "</td>";
                             echo "<td>" . $data['Bureau'] . "</td>";
@@ -389,7 +389,7 @@
                             echo "<td>" . $data['Nom'] . "</td>";
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
-                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
                             echo "<td>" . $data['Specialite'] . "</td>";
                             echo "<td>" . $data['Mail'] . "</td>";
                             echo "<td>" . $data['Bureau'] . "</td>";
@@ -433,7 +433,7 @@
                                 echo "<td>" . $data['Nom'] . "</td>";
                                 echo "<td>" . $data['Prenom'] . "</td>";
                                 $image = $data['Photo'];
-                                echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                                echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
                                 echo "<td>" . $data['Specialite'] . "</td>";
                                 echo "<td>" . $data['Mail'] . "</td>";
                                 echo "<td>" . $data['Bureau'] . "</td>";
