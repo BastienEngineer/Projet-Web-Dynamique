@@ -6,7 +6,7 @@ case "Admin":
     include('connexionA.php');
     break;
 case "Coach":
-    include('connexionA.php');
+    include('connexionC.php');
     break;
 case "Client":
     include('connexionB.php');
