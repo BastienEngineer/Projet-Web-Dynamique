@@ -28,11 +28,11 @@
         </tr>
         <tr>
             <td>Numero de votre CB</td>
-            <td><input type="text" name="num"></td>
+            <td><input type="text" pattern="[0-9]{16}" name="num"></td>
         </tr>
         <tr>
             <td>Nom de votre CB</td>
-            <td><input type="text" name="nom"></td>
+            <td><input type="text" pattern="[a-zA-Z]+" name="nom"></td>
         </tr>
         <tr>
             <td>
@@ -42,7 +42,7 @@
         </tr>
         <tr>
             <td>Code de securite</td>
-            <td><input type="password" name="code"></td>
+            <td><input type="password" placeholder="000" pattern="[0-9]{3}" name="code"></td>
         </tr>
         <tr>
         <td colspan="2" align="center">

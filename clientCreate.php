@@ -39,7 +39,7 @@
         </tr>
         <tr>
             <td>Code Postal</td>
-            <td><input type="text" name="code"></td>
+            <td><input type="text" pattern="[0-9]{5}" name="code"></td>
         </tr>
         <tr>
             <td>Pays</td>
@@ -47,7 +47,7 @@
         </tr>
         <tr>
             <td>Telephone</td>
-            <td><input type="text" name="tel"></td>
+            <td><input type="text" pattern="[0-9]{10}" name="tel"></td>
         </tr>
         <tr>
             <td>Carte Etudiante</td>
