@@ -24,7 +24,8 @@ if (isset($_POST["admin"])) {
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
     if ($db_found) {
-    $result =mysqli_query($db_handle, "SELECT * FROM admin WHERE Nom='$_POST[nom]' AND Prenom='$_POST[prenom]' AND Mail='$_POST[courrier]'");
+    $result =mysqli_query($db_handle, "SELECT * FROM admin WHERE Nom='$_POST[nom]' AND Prenom='$_POST[prenom]' AND Mail='$_POST[courrier]' ORDER BY aID ");
+    if (mysqli_num_rows($result)) {
     echo "<table border=\"1\">";
     echo "<tr>";
     echo "<th>" . "ID" . "</th>";
@@ -45,6 +46,11 @@ if (isset($_POST["admin"])) {
     while ($data = mysqli_fetch_assoc($res)) {
         $d=$data['mID'];
         echo "<a href='communiquer.php?mID=$d'><br>" . $data['Prenom'] . "</br>";
+    }
+    }
+    else
+    {
+        header("Location:connexionA.php");
     }
     }
     else{
