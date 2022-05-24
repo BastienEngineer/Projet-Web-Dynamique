@@ -39,7 +39,7 @@ else
         $r=mysqli_query($db_handle,$getID);
         if (mysqli_num_rows($r)) 
         {
-            $res =mysqli_query($db_handle, "SELECT * FROM cb WHERE Numero='$_POST[num]' AND Nom='$_POST[nom]' AND Date='$_POST[date]' AND Code='$_POST[code]'");
+            $res =mysqli_query($db_handle, "SELECT * FROM cb WHERE cbID=$e AND Numero='$_POST[num]' AND Nom='$_POST[nom]' AND Date='$_POST[date]' AND Code='$_POST[code]'");
             if (mysqli_num_rows($res)) 
             {
             echo "<table border=\"1\">";
