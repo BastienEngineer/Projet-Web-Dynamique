@@ -72,7 +72,9 @@
                                 <h4 class="card-title">Basketball</h4>
                                 <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                                 card's content.</p>
-                                <a class="btn btn-primary text-white">Sélectionner</a>
+                                <form action="" method="post">
+                                    <input name="b1" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -92,7 +94,9 @@
                             <h4 class="card-title">Football</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b2" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -112,7 +116,9 @@
                             <h4 class="card-title">Rugby</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b3" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -132,7 +138,9 @@
                             <h4 class="card-title">Tennis</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b4" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -152,7 +160,9 @@
                             <h4 class="card-title">Natation</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b5" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -172,16 +182,285 @@
                             <h4 class="card-title">Plongeon</h4>
                             <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                            <a class="btn btn-primary text-white">Sélectionner</a>
+                            <form action="" method="post">
+                                <input name="b6" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-
+<?php
+                $conn=mysqli_connect('localhost','root','');
+                $d=mysqli_select_db($conn,'omnes');
+                $sql="";
+                if( isset($_POST['b1'])  ){
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "basket"';
+                    if($d)
+                    {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
+                  }
+                  if( isset($_POST['b2'])  ){
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "football"';
+                    if($d)
+                    {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
+                  }
+                  if( isset($_POST['b3'])  ){
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "rugby"';
+                    if($d)
+                    {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
+                
+                  }
+                  if( isset($_POST['b4'])  ){
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "tennis"';
+                    if($d)
+                    {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
+                
+                  }
+                  if( isset($_POST['b5'])  ){
+                    $sql="SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = 'natation'";
+                    if($d)
+                    {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
+                        $req1=mysqli_query($conn, $sql); 
+                        while($data=mysqli_fetch_assoc($req1))
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
+                    }
+                    else
+                    {
+                        echo " error";
+                    }
+                
+                    }
+                    if( isset($_POST['b6'])  ){
+                        $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "plongeon"';
+                        if($d)
+                        {
+                            echo "<table class='table mt-5 pt-5'>";
+                            echo "<tr>";
+                            echo "<th>" . "Nom" . "</th>";
+                            echo "<th>" . "Prenom" . "</th>";
+                            echo "<th>" . "Photo" . "</th>";
+                            echo "<th>" . "Specialité" . "</th>";
+                            echo "<th>" . "Mail" . "</th>";
+                            echo "<th>" . "Bureau" . "</th>";
+                            $req1=mysqli_query($conn, $sql); 
+                            while($data=mysqli_fetch_assoc($req1))
+                            {
+                                echo "<tr>";
+                                echo "<td>" . $data['Nom'] . "</td>";
+                                echo "<td>" . $data['Prenom'] . "</td>";
+                                $image = $data['Photo'];
+                                echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                                echo "<td>" . $data['Specialite'] . "</td>";
+                                echo "<td>" . $data['Mail'] . "</td>";
+                                echo "<td>" . $data['Bureau'] . "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                            echo "<br><br>";
+                            echo "
+                            <div class='container'>
+                            <div class='row'>
+                            <div class='col text-center'>
+                            <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                            <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                            <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                            </div>
+                            </div>
+                            </div>";
+                        }
+                        else
+                        {
+                            echo " error";
+                        }
+                    
+                      }
+                
+                mysqli_close($conn);
+            ?>
 </div>
 
 <!-- Footer-->
