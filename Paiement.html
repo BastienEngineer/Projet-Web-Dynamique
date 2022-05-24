@@ -6,6 +6,7 @@
     <script type="text/javascript" src="message.js"></script>
 </head>
 <body>
+<form action="email.php" method="post">
 <h3>Paiement par carte de crédit</h3>
 <table border="1" id="tbl">
 <tr>
@@ -35,7 +36,7 @@
 </tr>
 <tr>
 <td colspan="2" align="center">
-<input type="submit" value="Valide" onclick="messagealert(event)">
+<input type="submit" name="valide" value="valide" onclick="messagealert(event)">
 </td>
 </tr>
 </table>
