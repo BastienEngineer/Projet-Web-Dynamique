@@ -7,7 +7,6 @@ $spe = isset($_POST["spe"])? $_POST["spe"] : "";
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $salle = isset($_POST["salle"])? $_POST["salle"] : "";
 
-$d=$_SESSION['aID'];
 $erreur = "";
 if ($nom == "") {
     $erreur .= "Le champ nom est vide. <br>";
@@ -29,9 +28,7 @@ if ($salle == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    if (!isset($_SESSION['aID'])) {
-        header("Location: admin.php");
-    }
+    header("Location: admin.php");
 }
 else
 {
@@ -69,7 +66,7 @@ if (isset($_POST["delete"])) {
     }
     else
     {
-        //header("Location: admin.php");
+        header("Location: admin.php");
     }
     }
     else{

@@ -4,6 +4,12 @@ $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 
+if (isset($_SESSION['aID'])) {
+    $nom=$_SESSION['Nom'];
+    $prenom=$_SESSION['Prenom'];
+    $mail=$_SESSION['Mail'];
+} 
+
 $erreur = "";
 if ($nom == "") {
     $erreur .= "Le champ nom est vide. <br>";
@@ -16,13 +22,7 @@ if ($mail == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    if (isset($_SESSION['aID'])) {
-        header("Location: admin.php");
-    }
-    else
-    {
-        header("Location:connexionA.php"); 
-    }
+    header("Location:connexionA.php"); 
 }
 else
 {
@@ -46,9 +46,10 @@ else
         echo "<td>" . $data['Nom'] . "</td>";
         echo "<td>" . $data['Prenom'] . "</td>";
         echo "</tr>";
-        $e=$data['aID'];
-        $_SESSION['aID']=$e;
-        $d=$_SESSION['aID'];
+        $_SESSION['aID']=$data['aID'];
+        $_SESSION['Nom']=$data['Nom'];
+        $_SESSION['Prenom']=$data['Prenom'];
+        $_SESSION['Mail']=$data['Mail'];
         }
         echo "</table>";
         }
