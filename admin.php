@@ -45,7 +45,7 @@ if (isset($_POST["admin"])) {
     $res=mysqli_query($db_handle, "SELECT mID,Prenom FROM client");
     while ($data = mysqli_fetch_assoc($res)) {
         $d=$data['mID'];
-        echo "<a href='communiquer.php?mID=$d'><br>" . $data['Prenom'] . "</br>";
+        //echo "<a href='communiquer.php?mID=$d'><br>" . $data['Prenom'] . "</br>";
     }
     }
     else

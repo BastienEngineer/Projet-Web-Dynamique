@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
@@ -34,8 +35,15 @@ else
         echo "<td>" . $data['Mail'] . "</td>";
         echo "<td>" . $data['MotdePasse'] . "</td>";
         echo "</tr>";
+        $_SESSION['mID']=$data['mID'];
+        $e=$_SESSION['mID'];
         }
         echo "</table>";
+        $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach");
+        while ($data = mysqli_fetch_assoc($res)) {
+            $d=$data['cID'];
+            echo "<a href='communiquer2.php?cID=$d'><br>" . $data['Prenom'] . "</br>";
+        }
         }
         else
         {
@@ -50,3 +58,14 @@ else
     }  
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <a href="deconnexion.php">Deconnexion</a>
+</body>
+</html>

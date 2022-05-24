@@ -4,8 +4,8 @@ $database = "omnes";
 //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
-$d=$_GET['mID'];
-$e=$_SESSION['cID'];
+$d=$_GET['cID'];
+$e=$_SESSION['mID'];
 if ($db_found) {
     if(isset($_POST['send']))
     {
@@ -37,14 +37,14 @@ else
 
 <section>
     <?php
-    $getmsg=mysqli_query($db_handle, "SELECT * FROM echange WHERE dest=$e AND emet=$d OR dest=$d AND emet=$e");
+    $getmsg=mysqli_query($db_handle, "SELECT * FROM echange WHERE (dest=$e AND emet=$d) OR (dest=$d AND emet=$e)");
     while ($data = mysqli_fetch_assoc($getmsg)) {
-        if($data['dest'] == $d)
+        if($data['dest'] == $e)
         {
             ?><p style="color:red;"><?php echo $data['sms']; ?></p>
             <?php   
         }
-        else if($data['dest'] == $e)
+        else if($data['dest'] == $d)
         {
             ?><p style="color:blue;"><?php echo $data['sms']; ?></p>
             <?php 
