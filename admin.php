@@ -16,7 +16,13 @@ if ($mail == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:connexionA.php"); 
+    if (isset($_SESSION['aID'])) {
+        header("Location: admin.php");
+    }
+    else
+    {
+        header("Location:connexionA.php"); 
+    }
 }
 else
 {
@@ -71,7 +77,17 @@ else
         <label for="text">Nom : </label>  
         <input type="text" name="nom"/><br/>
         <label for="text">Prenom : </label>  
-        <input type="text" name="prenom"/><br/>  
+        <input type="text" name="prenom"/><br/>
+        <div class="custom-file">
+        <input type="file" class="custom-file-input" name="file" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>  
+        <label for="text">Specialite : </label>  
+        <input type="text" name="spe"/><br/>
+        <label for="email">Mail : </label> 
+        <input type="email" id="email" name="courrier"/><br/> 
+        <label for="text">Bureau (Salle) : </label>  
+        <input type="text" name="salle"/><br/>
         <input type="submit" value="Ajouter un coach" name="add">  
         <input type="submit" value="Supprimer un coach" name="delete"> 
     </form>
