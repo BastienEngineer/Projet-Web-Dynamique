@@ -171,25 +171,47 @@
 
     </div>
 </div>
-      <!--/.First slide-->
-
-      <table>
-            <tr>
-                <!--FETCHING DATA FROM EACH
-                    ROW OF EVERY COLUMN-->
-                <td><?php
+            <?php
                 $conn=mysqli_connect('localhost','root','');
                 $d=mysqli_select_db($conn,'omnes');
                 $sql="";
                 if( isset($_POST['b1'])  ){
-                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "musculation"';
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "musculation"';
                     if($d)
                     {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
-                            echo " " .$data['Nom'];
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
                     }
                     else
                     {
@@ -197,14 +219,42 @@
                     }
                   }
                   if( isset($_POST['b2'])  ){
-                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "fitness"';
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "fitness"';
                     if($d)
                     {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
-                            echo " " .$data['Nom'];
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
                     }
                     else
                     {
@@ -212,14 +262,42 @@
                     }
                   }
                   if( isset($_POST['b3'])  ){
-                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "biking"';
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "biking"';
                     if($d)
                     {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
-                            echo " " .$data['Nom'];
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
                     }
                     else
                     {
@@ -228,14 +306,42 @@
                 
                   }
                   if( isset($_POST['b4'])  ){
-                    $sql='SELECT Nom,Prenom FROM coach WHERE Specialite = "cardio"';
+                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "cardio"';
                     if($d)
                     {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
-                            echo " " .$data['Nom'];
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
                     }
                     else
                     {
@@ -244,14 +350,42 @@
                 
                   }
                   if( isset($_POST['b5'])  ){
-                    $sql="SELECT Nom,Prenom FROM coach WHERE Specialite = 'collectif'";
+                    $sql="SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = 'collectif'";
                     if($d)
                     {
+                        echo "<table class='table mt-5 pt-5'>";
+                        echo "<tr>";
+                        echo "<th>" . "Nom" . "</th>";
+                        echo "<th>" . "Prenom" . "</th>";
+                        echo "<th>" . "Photo" . "</th>";
+                        echo "<th>" . "Specialité" . "</th>";
+                        echo "<th>" . "Mail" . "</th>";
+                        echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
-                            echo " " .$data['Nom'];
+                            echo "<tr>";
+                            echo "<td>" . $data['Nom'] . "</td>";
+                            echo "<td>" . $data['Prenom'] . "</td>";
+                            $image = $data['Photo'];
+                            echo "<td>" . "<img src='$image' height='80' width='120'>" . "</td>";
+                            echo "<td>" . $data['Specialite'] . "</td>";
+                            echo "<td>" . $data['Mail'] . "</td>";
+                            echo "<td>" . $data['Bureau'] . "</td>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
+                        echo "<br><br>";
+                        echo "
+                        <div class='container'>
+                        <div class='row'>
+                        <div class='col text-center'>
+                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        </div>
+                        </div>
+                        </div>";
                     }
                     else
                     {
@@ -261,9 +395,7 @@
                 }
                 
                 mysqli_close($conn);
-                ?></td>
-            </tr>
-        </table>
+            ?>
 </div>
 
 <!-- Footer-->
