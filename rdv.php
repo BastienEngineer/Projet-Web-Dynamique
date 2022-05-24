@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+﻿<?php 
+    echo '<link href="css/styles.css" rel="stylesheet" type="text/css" />';    
+    echo '<!DOCTYPE html>
 <html>
 <head>
     <title>Rendez-vous</title>
@@ -60,9 +62,154 @@
         </div>
     </section>
     <!-- Section -->
-    <div class="container">
+    <div class="container">';
 
-    </div>
+
+
+
+    $database = "omnes";
+    $db_handle = mysqli_connect('localhost', 'root', '' );
+    $db_found = mysqli_select_db($db_handle, $database);
+    if ($db_found)
+    {
+        $sql = "SELECT * FROM `emploisTemps` WHERE `c_id` = 1;";
+        $result = mysqli_query($db_handle, $sql);
+        while ($data = mysqli_fetch_array($result))
+        {
+            $array = array($data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10], $data[11], $data[12]);
+        }
+        echo '<table border="1"><tr><td>Specialite</td><td>Coach</td>';
+        if($array[0] == 1 || $array[1] == 1)
+        {
+            if($array[0] == 0 || $array[1] == 0)
+            {
+                echo '<td>Lundi</td>';
+            }
+            else
+            {
+                echo '<td colspan="2">Lundi</td>';
+            }
+        }
+        if($array[2] == 1 || $array[3] == 1)
+        {
+            if($array[2] == 0 || $array[3] == 0)
+            {
+                echo '<td>Mardi</td>';
+            }
+            else
+            {
+                echo '<td colspan="2">Mardi</td>';
+            }
+        }
+        if($array[4] == 1 || $array[5] == 1)
+        {
+            if($array[4] == 0 || $array[5] == 0)
+            {
+                echo '<td>Mercredi</td>';
+            }
+            else
+            {
+                echo '<td colspan="2">Mercredi</td>';
+            }
+        }
+        if($array[6] == 1 || $array[7] == 1)
+        {
+            if($array[6] == 0 || $array[7] == 0)
+            {
+                echo '<td>Jeudi</td>';
+            }
+            else
+            {
+                echo '<td colspan="2">Jeudi</td>';
+            }
+        }
+        if($array[8] == 1 || $array[9] == 1)
+        {
+            if($array[8] == 0 || $array[9] == 0)
+            {
+                echo '<td>Vendredi</td>';
+            }
+            else
+            {
+                echo '<td colspan="2">Vendredi</td>';
+            }
+        }
+        if($array[10] == 1 || $array[11] == 1)
+        {
+            if($array[10] == 0 || $array[11] == 0)
+            {
+                echo '<td>Semdi</td>';
+            }
+            else
+            {
+                echo '<td colspan="2">Samedi</td>';
+            }
+        }
+        echo '</tr>';
+        echo '<tr><td rowspan="13">Musculation</td><td rowspan="13">DUMAIS Guy</td>';
+        $jmax=0;
+
+        for($i=0; $i<12; $i++)
+        {
+            if($array[$i] == 1)
+            {
+                $jmax++;
+            }
+        }
+        $heure = 9;
+        $ajoutheure = 0;
+        $minute = 0;
+        $ampm = 0;
+        $arraytemp = $array;
+        
+        for($i=0; $i<13; $i++)
+        {
+            $arraytemp = $array;
+            for($j=0; $j<$jmax; $j++)
+            {
+                echo '<td';
+                $sql = "SELECT * FROM `rdv` WHERE `c_id` = 1 and `ligne` =" . $i . " and `colonne` =" . $j . " ;";
+                $result = mysqli_query($db_handle, $sql);
+                if (mysqli_num_rows($result) == 0)
+                {
+	                echo '>';
+                }
+                else
+                {
+                    while ($data = mysqli_fetch_array($result))
+                    {
+                        if($data[3] == 1)
+                        {
+                            echo ' class="reserve">';
+                        }
+                        else
+                        {
+                            echo'>';
+                        }
+                    }
+                }
+                $unefois = false;
+                for($t=0; $t<12; $t++)
+                {
+                    if($arraytemp[$t] == 1 && $unefois == true)
+                    {
+                        $arraytemp[$t] = 0;
+                        $unefois = true;
+                        $ampm = 0;
+                    }
+                }
+                echo '16:00';
+                echo '</td>';
+            }
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+
+
+
+
+    echo '    </div>
 
     <!-- Footer-->
     <footer id="footer" class="bg-white">
@@ -108,4 +255,5 @@
         </div>
     </footer>
 </body>
-</html>
+</html>';
+?>

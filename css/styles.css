@@ -1,0 +1,122 @@
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-color: #4ca1af;
+    background-image: linear-gradient(135deg, #4ca1af 0%, #c4e0e5 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+
+body {
+    min-height: 110vh;
+    background-color: #4ca1af;
+    background-image: linear-gradient(135deg, #4ca1af 0%, #c4e0e5 100%);
+}
+
+#image_rdv {
+    width: 800px;
+    height: 100px;
+}
+
+#image_activite {
+    background-image: url("img/activitesportive.jpg");
+    width: 100px;
+    height: 100px;
+}
+
+#image_competition {
+    background-image: url("img/competition.jpg");
+    width: 100px;
+    height: 100px;
+}
+
+#image_salle {
+    background-image: url("img/sallesport.jpg");
+    width: 100px;
+    height: 100px;
+}
+
+#rdv_button {
+    margin-left: 150px;
+    height: 70px;
+    color: #fff;
+}
+
+#rdv_buttonActivite {
+    margin-left: 50px;
+}
+
+#rdv_buttonCompetiton {
+    margin-left: 50px;
+}
+
+#rdv_buttonSalle {
+    margin-left: 50px;
+}
+
+#rdv_1_button {
+    margin-left: 150px;
+    height: 70px;
+    color: #fff;
+}
+
+.reserve {
+    background: linear-gradient(135deg, #ffa82b 12.5%, #fff 12.5%, #fff 37.5%, #ffa82b 37.5%, #ffa82b 62.5%, #fff 62.5%, #fff 87.5%, #ffa82b 87.5%);
+    background-size: 15px 15px;
+    background-position: 50px 50px;
+}
