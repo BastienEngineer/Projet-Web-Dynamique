@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+﻿<?php 
+    echo '<link href="css/styles.css" rel="stylesheet" type="text/css" />';  
+    
+    echo '<!DOCTYPE html>
 <html>
 <head>
     <title>Rendez-vous</title>
@@ -57,13 +60,39 @@
                 Nos coachs à votre disposition pour prendre un rendez-vous. Veuillez choisir un rendez-vous pour
                 une activités sportives, des sports de compétition ou pour les salles de sport Omnes.
             </p>
-            <a href="rdv.php" class="btn btn-outline-light btn-lg js-scroll-trigger" role="button">Prenez un rendez-vous !</a>
         </div>
     </section>
     <!-- Section -->
-    <div class="container">
+    <div class="container">';
+    
 
-    </div>
+    $ligne = isset($_POST["ligne"])? $_POST["ligne"] : "";
+    $colonne = isset($_POST["colonne"])? $_POST["colonne"] : "";
+    $c_id = isset($_POST["c_id"])? $_POST["c_id"] : "";
+
+    $database = "omnes";
+    $db_handle = mysqli_connect('localhost', 'root', '' );
+    $db_found = mysqli_select_db($db_handle, $database);
+    $erreur = "";
+    if ($ligne == "") {
+        $erreur .= "Veuillez appuyer sur un bouton !!!";
+    }
+    if ($erreur == "") {
+        if ($db_found)
+        {
+            $sql = 'INSERT INTO `rdv` VALUES ("' . $c_id . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
+            $result = mysqli_query($db_handle, $sql);
+            echo 'Merci d avoir pris un rendez-vous !!!';
+        }
+    }
+    else
+    {
+        echo "Erreur:<br>" . $erreur;
+    }
+    
+
+
+    echo '    </div>
 
     <!-- Footer-->
     <footer id="footer" class="bg-white">
@@ -109,4 +138,6 @@
         </div>
     </footer>
 </body>
-</html>
+</html>';
+
+?>

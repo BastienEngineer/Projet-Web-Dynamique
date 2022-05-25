@@ -1,5 +1,6 @@
 ﻿<?php 
-    echo '<link href="css/styles.css" rel="stylesheet" type="text/css" />';    
+    echo '<link href="css/styles.css" rel="stylesheet" type="text/css" />';  
+    
     echo '<!DOCTYPE html>
 <html>
 <head>
@@ -63,9 +64,9 @@
     </section>
     <!-- Section -->
     <div class="container">';
+    
 
-
-
+    $c_id = 1;
 
     $database = "omnes";
     $db_handle = mysqli_connect('localhost', 'root', '' );
@@ -78,7 +79,7 @@
         {
             $array = array($data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10], $data[11], $data[12]);
         }
-        echo '<table border="1"><tr><td>Specialite</td><td>Coach</td>';
+        echo '<table border="1" class="tableRDV"><tr><td>Specialite</td><td>Coach</td>';
         if($array[0] == 1 || $array[1] == 1)
         {
             if($array[0] == 0 || $array[1] == 0)
@@ -185,12 +186,15 @@
             {
                 //Heure
                 $unefois = false;
+                $button = false;
+                $temp;
                 for($t=0; $t<12; $t++)
                 {
                     if($arraytemp[$t] == 1 && $unefois == false)
                     {
                         $arraytemp[$t] = 0;
                         $unefois = true;
+                        $temp = $t;
                         $ampm = $t%2;
                     }
                 }
@@ -203,7 +207,7 @@
                     $heure = 14 + $ajoutheure;
                 }
                 echo '<td';                
-                $sql = "SELECT * FROM `rdv` WHERE `c_id` = 1 and `ligne` =" . $i . " and `colonne` =" . $j . " ;";
+                $sql = "SELECT * FROM `rdv` WHERE `c_id` = $c_id and `ligne` =" . $i . " and `colonne` =" . $j . " ;";
                 $result = mysqli_query($db_handle, $sql);
 
                 $deuxfois = false;
@@ -216,7 +220,8 @@
                 {
                     if (mysqli_num_rows($result) == 0)
                     {
-	                    echo '>';
+	                    echo '><input type="button" class="dispo"';
+                        $button = true;
                     }
                     else
                     {
@@ -228,21 +233,36 @@
                             }
                             else
                             {
-                                echo'>';
+                                echo'><input type="button" class="dispo"';
+                                $button = true;
                             }
                         }
                     }
                 }
-                echo $heure;
-                if($minute == 0)
+                if($button == true)
                 {
-                    echo ':00';
+                    if($minute == 0)
+                    {
+                        echo ' value="' . $heure . ':00" onclick="priseRDV(' . $i . ', ' . $j . ', ' . $temp . ', ' . $c_id . ')" />';
+                    }
+                    else
+                    {
+                        echo ' value="' . $heure . ':' . $minute . '" onclick="priseRDV(' . $i . ', ' . $j . ', ' . $temp . ', ' . $c_id . ')" />';
+                    }
                 }
                 else
                 {
-                    echo ':' . $minute;
+                    echo $heure;
+                    if($minute == 0)
+                    {
+                        echo ':00';
+                    }
+                    else
+                    {
+                        echo ':' . $minute;
+                    }
+                    echo '</td>';
                 }
-                echo '</td>';
             }
             $minute = $minute + 20;
             if($minute == 60)
@@ -253,10 +273,18 @@
             echo '</tr>';
         }
         echo '</table>';
+        echo '<form action="rdvpris.php" method="post">';
+        echo '<div id="jour"></div>';
+        echo '<div id="horaire"></div>';
+        echo '<input type="hidden" id="ligne" name="ligne" />';
+        echo '<input type="hidden" id="colonne" name="colonne" />';
+        echo '<input type="hidden" id="c_id" name="c_id" />';
+        echo '<input type="submit" value="Prendre rendez-vous" />';
+        echo '</form>';
     }
 
 
-
+    
 
     echo '    </div>
 
@@ -305,4 +333,5 @@
     </footer>
 </body>
 </html>';
+
 ?>
