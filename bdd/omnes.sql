@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 24 mai 2022 à 16:37
+-- Généré le :  mer. 25 mai 2022 à 11:11
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cb` (
   `Date` date NOT NULL,
   `Code` int(3) NOT NULL,
   PRIMARY KEY (`cbID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `cb`
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `Tel` varchar(255) NOT NULL,
   `CarteE` int(10) NOT NULL,
   PRIMARY KEY (`mID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `client`
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `coach` (
 --
 
 INSERT INTO `coach` (`cID`, `Nom`, `Prenom`, `Photo`, `Specialite`, `Mail`, `Bureau`) VALUES
-(1, 'Tibo', 'Inshape', 'img/tibo.jpeg', 'musculation', 'tibo@gmail.com', 'G015'),
+(1, 'Inshape', 'Tibo', 'img/tibo.jpeg', 'musculation', 'tibo@gmail.com', 'G015'),
 (2, 'Mua', 'Sissy', 'img/sissy.jpg', 'fitness', 'sissy@gmail.com', 'G011'),
 (3, 'Sahili', 'Nassim', 'img/nassim.jpg', 'biking', 'nassim@gmail.com', 'G009'),
 (4, 'Sansone', 'Leslie', 'img/leslie.jpg', 'cardio', 'leslie@gmail.com', 'G016'),
@@ -138,6 +138,29 @@ INSERT INTO `coach` (`cID`, `Nom`, `Prenom`, `Photo`, `Specialite`, `Mail`, `Bur
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `cv`
+--
+
+DROP TABLE IF EXISTS `cv`;
+CREATE TABLE IF NOT EXISTS `cv` (
+  `cvID` int(11) NOT NULL AUTO_INCREMENT,
+  `prenom` varchar(255) NOT NULL,
+  `formation` varchar(255) NOT NULL,
+  `experience` varchar(255) NOT NULL,
+  PRIMARY KEY (`cvID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf32;
+
+--
+-- Déchargement des données de la table `cv`
+--
+
+INSERT INTO `cv` (`cvID`, `prenom`, `formation`, `experience`) VALUES
+(1, 'Tibo', 'prof de sport', 'BAC S'),
+(2, 'Sissy', 'Prof de fitness', 'BAC ES');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `echange`
 --
 
@@ -148,7 +171,31 @@ CREATE TABLE IF NOT EXISTS `echange` (
   `dest` int(11) NOT NULL,
   `emet` int(11) NOT NULL,
   PRIMARY KEY (`msgID`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mail`
+--
+
+DROP TABLE IF EXISTS `mail`;
+CREATE TABLE IF NOT EXISTS `mail` (
+  `eID` int(11) NOT NULL AUTO_INCREMENT,
+  `destID` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `dest` varchar(255) NOT NULL,
+  `emet` varchar(255) NOT NULL,
+  PRIMARY KEY (`eID`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf32;
+
+--
+-- Déchargement des données de la table `mail`
+--
+
+INSERT INTO `mail` (`eID`, `destID`, `email`, `dest`, `emet`) VALUES
+(21, 20, 'Merci d avoir reserve notre RDV', 'clarice@gmail.com ', 'Service d Omnes Sport'),
+(22, 20, 'Merci d avoir reserve notre RDV', 'clarice@gmail.com ', 'Service d Omnes Sport');
 
 --
 -- Contraintes pour les tables déchargées
@@ -159,6 +206,12 @@ CREATE TABLE IF NOT EXISTS `echange` (
 --
 ALTER TABLE `cb`
   ADD CONSTRAINT `cb_ibfk_1` FOREIGN KEY (`cbID`) REFERENCES `client` (`mID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `cv`
+--
+ALTER TABLE `cv`
+  ADD CONSTRAINT `cv_ibfk_1` FOREIGN KEY (`cvID`) REFERENCES `coach` (`cID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
