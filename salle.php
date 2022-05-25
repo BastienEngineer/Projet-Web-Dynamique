@@ -37,7 +37,30 @@
     </div>
 </nav>
 
-
+<div class="container my-5 py-5">
+<div class="border border-light py-5 px-5" style="border-radius: 33px;">
+<h3 class="text-center text-white pb-3">Salle de Sport OMNES</h3>
+<div class="row">
+      <div class="col-md-6">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="img/salle.jpg" alt="">
+      </div>
+      <div class="col-md-6 text-white">
+        <p class="lead">Salle: G-001</p>
+        <p class="lead">Téléphone: +33 01 22 33 44 55</p>
+        <p class="lead">Email: salle.sport@omnessports.fr</p>
+        <form action="" method="post">
+        <input name="b" type="submit" value="Nos services" class="btn btn-outline-light"></input>
+        </form>
+      </div>
+</div>
+</div>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+</div>
+</div>
 
 <!-- Footer-->
 <footer id="footer" class="bg-white">
