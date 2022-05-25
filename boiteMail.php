@@ -38,6 +38,7 @@ $email="";
             else
             {
                 $email="Aucun message";
+                echo $email;
             }
             
         }
@@ -48,6 +49,7 @@ $email="";
         //fermer la connexion
         mysqli_close($db_handle);
     ?>
+    <br>
     <a href="client.php">Retour</a>
 </section>
 </body>
