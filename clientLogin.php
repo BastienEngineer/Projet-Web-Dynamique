@@ -23,7 +23,9 @@
     <div class="border border-light py-5" style="border-radius: 33px;">
     <div class="row h-100 justify-content-center align-items-center">
     <div class="col-10 col-md-8 col-lg-4">
-    <form action="client.php" method="post"> 
+    <?php 
+    $spe=$_GET["spe"];
+    echo "<form action='client.php?spe=$spe' method='post'>"; ?> 
     <div class="form-group"> 
         <label for="email">Mail : </label>  
         <input type="email" id="email" class="form-control" placeholder="mail@gmail.com" name="courrier"/><br/>

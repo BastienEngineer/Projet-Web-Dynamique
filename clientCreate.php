@@ -21,7 +21,10 @@
 <body>
 <div class="container my-5 py-5">
 <div class="row h-100 justify-content-center align-items-center">
-    <form action="AjoutClient.php" method="post">
+<?php 
+    $spe=$_GET["spe"];
+    echo "<form action='AjoutClient.php?spe=$spe' method='post'>"; 
+?> 
         <table class="table">
         <tr>
             <td colspan="2" align="center">

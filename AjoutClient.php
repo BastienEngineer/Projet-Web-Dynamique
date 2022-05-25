@@ -9,6 +9,7 @@ $postal = isset($_POST["code"])? $_POST["code"] : "";
 $pays = isset($_POST["pays"])? $_POST["pays"] : "";
 $tel = isset($_POST["tel"])? $_POST["tel"] : "";
 $carte = isset($_POST["carte"])? $_POST["carte"] : "";
+$spe=$_GET["spe"];
 
 $erreur = "";
 if ($prenom == "") {
@@ -45,7 +46,7 @@ if (empty($carte)) {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:clientCreate.php"); 
+    header("Location:clientCreate.php?spe=$spe"); 
 }
 else
 {
@@ -62,7 +63,7 @@ else
         VALUES($id, '$_POST[nom]', '$_POST[prenom]', '$_POST[courrier]', '$_POST[mdp]','$_POST[adresse]', '$_POST[ville]', $postal, '$_POST[pays]','$_POST[tel]', $carte)";
         $result =mysqli_query($db_handle, $sql);
         echo "Insertion reussi";
-        header('Location:clientLogin.php');
+        header("Location:clientLogin.php?spe=$spe");
         }
         else{
             echo "<br>Database not found";

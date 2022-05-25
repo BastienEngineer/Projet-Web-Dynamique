@@ -24,7 +24,9 @@
     <div class="container-fluid">
         <div class="my-5 py-5">
             <div class="row justify-content-center align-items-center h-100">
-                <form action="clientChoice.php" method="post">
+            <?php 
+                $spe=$_GET["spe"];
+                echo "<form action='clientChoice.php?spe=$spe' method='post'>"; ?> 
                     <input type="submit" class="btn btn-outline-light btn-lg" value="Se connecter" name="login">
                     <input type="submit" class="btn btn-outline-light btn-lg" value="Creer un compte" name="login">
                 </form>

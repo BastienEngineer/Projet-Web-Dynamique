@@ -3,7 +3,8 @@ session_start();
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
-
+$spe=$_GET["spe"];
+echo $spe;
 if (isset($_SESSION['mID'])) {
     $mail=$_SESSION['Mail'];
     $mdp=$_SESSION['MotdePasse'];
@@ -17,7 +18,7 @@ if ($mdp == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:clientLogin.php"); 
+    header("Location:clientLogin.php?spe=$spe"); 
 }
 else
 {
@@ -47,15 +48,17 @@ else
         $_SESSION['MotdePasse']=$data['MotdePasse'];
         }
         echo "</table>";
-        $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach");
+        $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach WHERE Specialite='$_GET[spe]'");
         while ($data = mysqli_fetch_assoc($res)) {
             $d=$data['cID'];
+            echo $d;
+            echo $spe;
             echo "<a href='communiquer2.php?cID=$d'><br>" . $data['Prenom'] . "</br>";
         }
         }
         else
         {
-            header("Location:clientLogin.php");
+            header("Location:clientLogin.php?spe=$spe");
         }
         }
         else{
