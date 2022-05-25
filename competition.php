@@ -257,6 +257,7 @@
                         {
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
+                            $prenomCV1=$data['Prenom'];
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
                             echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
@@ -273,7 +274,7 @@
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
                         <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
-                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        <a href='xml/$prenomCV1.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
                         </div>";
@@ -300,6 +301,7 @@
                         {
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
+                            $prenomCV2=$data['Prenom'];
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
                             echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
@@ -316,7 +318,7 @@
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
                         <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
-                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        <a href='xml/$prenomCV2.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
                         </div>";
@@ -344,6 +346,7 @@
                         {
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
+                            $prenomCV3=$data['Prenom'];
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
                             echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
@@ -360,7 +363,7 @@
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
                         <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
-                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        <a href='xml/$prenomCV3.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
                         </div>";
@@ -388,6 +391,7 @@
                         {
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
+                            $prenomCV4=$data['Prenom'];
                             echo "<td>" . $data['Prenom'] . "</td>";
                             $image = $data['Photo'];
                             echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
@@ -404,7 +408,7 @@
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
                         <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
-                        <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                        <a href='xml/$prenomCV4.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
                         </div>";
@@ -432,6 +436,7 @@
                             {
                                 echo "<tr>";
                                 echo "<td>" . $data['Nom'] . "</td>";
+                                $prenomCV5=$data['Prenom'];
                                 echo "<td>" . $data['Prenom'] . "</td>";
                                 $image = $data['Photo'];
                                 echo "<td>" . "<img src='$image' height='80' width='80'>" . "</td>";
@@ -448,7 +453,7 @@
                             <div class='col text-center'>
                             <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
                             <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
-                            <button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button>
+                            <a href='xml/$prenomCV5.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                             </div>
                             </div>
                             </div>";
