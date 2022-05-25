@@ -3,6 +3,12 @@ session_start();
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
+
+if (isset($_SESSION['mID'])) {
+    $mail=$_SESSION['Mail'];
+    $mdp=$_SESSION['MotdePasse'];
+} 
+
 if ($mail == "") {
     $erreur .= "Le champ courrier est vide. <br>";
 }
@@ -37,6 +43,8 @@ else
         echo "</tr>";
         $_SESSION['mID']=$data['mID'];
         $e=$_SESSION['mID'];
+        $_SESSION['Mail']=$data['Mail'];
+        $_SESSION['MotdePasse']=$data['MotdePasse'];
         }
         echo "</table>";
         $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach");
@@ -66,6 +74,7 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <a href="boiteMail.php">Mail</a>
     <a href="deconnexion.php">Deconnexion</a>
 </body>
 </html>

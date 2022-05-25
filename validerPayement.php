@@ -54,6 +54,12 @@ else
             echo "</tr>";
             }
             echo "</table>";
+            $m="Merci d avoir reserve notre RDV";
+            $d=$_SESSION['Mail'];
+            $i=0;
+            $insert="INSERT INTO mail(eID,destID,email,dest,emet)
+            VALUES($i,$e,'$m','$d','Service d Omnes Sport')";
+            $result =mysqli_query($db_handle, $insert);
             }
             else
             {
