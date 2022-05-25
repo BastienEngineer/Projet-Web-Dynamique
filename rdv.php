@@ -138,7 +138,7 @@
         {
             if($array[10] == 0 || $array[11] == 0)
             {
-                echo '<td>Semdi</td>';
+                echo '<td>Samedi</td>';
             }
             else
             {
@@ -146,7 +146,22 @@
             }
         }
         echo '</tr>';
-        echo '<tr><td rowspan="13">Musculation</td><td rowspan="13">DUMAIS Guy</td>';
+        echo '<tr><td rowspan="14">Musculation</td><td rowspan="14">DUMAIS Guy</td>';
+        for($h=0; $h < 12; $h++)
+        {
+            if($array[$h] == 1)
+            {
+                if($h%2 == 0)
+                {
+                    echo '<td>AM</td>';
+                }
+                else
+                {
+                    echo '<td>PM</td>';
+                }
+            }
+        }
+        echo '</tr>';
         $jmax=0;
 
         for($i=0; $i<12; $i++)
@@ -156,7 +171,7 @@
                 $jmax++;
             }
         }
-        $heure = 9;
+        $heure = 0;
         $ajoutheure = 0;
         $minute = 0;
         $ampm = 0;
@@ -164,42 +179,76 @@
         
         for($i=0; $i<13; $i++)
         {
+            echo '<tr>';
             $arraytemp = $array;
             for($j=0; $j<$jmax; $j++)
             {
-                echo '<td';
-                $sql = "SELECT * FROM `rdv` WHERE `c_id` = 1 and `ligne` =" . $i . " and `colonne` =" . $j . " ;";
-                $result = mysqli_query($db_handle, $sql);
-                if (mysqli_num_rows($result) == 0)
-                {
-	                echo '>';
-                }
-                else
-                {
-                    while ($data = mysqli_fetch_array($result))
-                    {
-                        if($data[3] == 1)
-                        {
-                            echo ' class="reserve">';
-                        }
-                        else
-                        {
-                            echo'>';
-                        }
-                    }
-                }
+                //Heure
                 $unefois = false;
                 for($t=0; $t<12; $t++)
                 {
-                    if($arraytemp[$t] == 1 && $unefois == true)
+                    if($arraytemp[$t] == 1 && $unefois == false)
                     {
                         $arraytemp[$t] = 0;
                         $unefois = true;
-                        $ampm = 0;
+                        $ampm = $t%2;
                     }
                 }
-                echo '16:00';
+                if($ampm == 0)
+                {
+                    $heure = 9 + $ajoutheure;
+                }
+                else
+                {
+                    $heure = 14 + $ajoutheure;
+                }
+                echo '<td';                
+                $sql = "SELECT * FROM `rdv` WHERE `c_id` = 1 and `ligne` =" . $i . " and `colonne` =" . $j . " ;";
+                $result = mysqli_query($db_handle, $sql);
+
+                $deuxfois = false;
+                if($heure == 12 || $heure == 13)
+                {
+                    echo ' class="manger">';
+                    $deuxfois = true;
+                }
+                if($deuxfois == false)
+                {
+                    if (mysqli_num_rows($result) == 0)
+                    {
+	                    echo '>';
+                    }
+                    else
+                    {
+                        while ($data = mysqli_fetch_array($result))
+                        {
+                            if($data[3] == 1)
+                            {
+                                echo ' class="reserve">';
+                            }
+                            else
+                            {
+                                echo'>';
+                            }
+                        }
+                    }
+                }
+                echo $heure;
+                if($minute == 0)
+                {
+                    echo ':00';
+                }
+                else
+                {
+                    echo ':' . $minute;
+                }
                 echo '</td>';
+            }
+            $minute = $minute + 20;
+            if($minute == 60)
+            {
+                $ajoutheure = $ajoutheure + 1;
+                $minute = 0;
             }
             echo '</tr>';
         }

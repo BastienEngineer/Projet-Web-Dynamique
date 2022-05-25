@@ -120,3 +120,9 @@ body {
     background-size: 15px 15px;
     background-position: 50px 50px;
 }
+
+.manger {
+    background: linear-gradient(135deg, #ffa82b 12.5%, #fff 12.5%, #fff 37.5%, #ffa82b 37.5%, #ffa82b 62.5%, #fff 62.5%, #fff 87.5%, #ffa82b 87.5%);
+    background-size: 15px 15px;
+    background-position: 50px 50px;
+}
