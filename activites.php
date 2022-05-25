@@ -235,6 +235,7 @@
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
+                            $spe1=$data['Specialite'];
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
                             $prenomCV1=$data['Prenom'];
@@ -253,7 +254,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
+                        <a href='connexionB.php?spe=$spe1'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV1.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
@@ -279,6 +280,7 @@
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
+                            $spe2=$data['Specialite'];
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
                             $prenomCV2=$data['Prenom'];
@@ -297,7 +299,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
+                        <a href='connexionB.php?spe=$spe2'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV2.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
@@ -324,6 +326,7 @@
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
+                            $spe3=$data['Specialite'];
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
                             $prenomCV3=$data['Prenom'];
@@ -342,7 +345,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
+                        <a href='connexionB.php?spe=$spe3'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV3.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
@@ -369,6 +372,7 @@
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
+                            $spe4=$data['Specialite'];
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
                             $prenomCV4=$data['Prenom'];
@@ -387,7 +391,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
+                        <a href='connexionB.php?spe=$spe4'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV4.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
