@@ -3,15 +3,16 @@ $choice = isset($_POST["connexion"])? $_POST["connexion"] : "";
 
 switch ($choice) {
 case "Admin":
-    include('connexionA.php');
+    header('Location:connexionA.php');
     break;
 case "Coach":
-    include('connexionC.php');
+    header('Location:connexionC.php');
     break;
 case "Client":
-    include('connexionB.php');
+    header('Location:connexionB.php');
     break;
 default:
+    header('Location:connexion.php');
     break;
 }
 ?>

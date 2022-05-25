@@ -3,10 +3,10 @@ $choice = isset($_POST["login"])? $_POST["login"] : "";
 
 switch ($choice) {
 case "Se connecter":
-    include('clientLogin.php');
+    header('Location:clientLogin.php');
     break;
 case "Creer un compte":
-    include('clientCreate.php');
+    header('Location:clientCreate.php');
     break;
 default:
     break;
