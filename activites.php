@@ -176,7 +176,7 @@
                 $d=mysqli_select_db($conn,'omnes');
                 $sql="";
                 if( isset($_POST['b1'])  ){
-                    $sql='SELECT Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "musculation"';
+                    $sql='SELECT cID,Nom,Prenom,Photo,Specialite,Mail,Bureau FROM coach WHERE Specialite = "musculation"';
                     if($d)
                     {
                         echo "<table class='table mt-5 pt-5'>";
@@ -190,6 +190,7 @@
                         $req1=mysqli_query($conn, $sql); 
                         while($data=mysqli_fetch_assoc($req1))
                         {
+                            $coachID=$data['cID'];
                             echo "<tr>";
                             echo "<td>" . $data['Nom'] . "</td>";
                             $prenomCV=$data['Prenom'];
@@ -208,7 +209,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
+                        <a href='communiquer2.php?cID=$coachID'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>

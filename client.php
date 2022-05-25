@@ -3,6 +3,9 @@ session_start();
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
+$verif=0;
+$d=$_SESSION['cID'];
+echo $d;
 
 if (isset($_SESSION['mID'])) {
     $mail=$_SESSION['Mail'];
@@ -47,11 +50,15 @@ else
         $_SESSION['MotdePasse']=$data['MotdePasse'];
         }
         echo "</table>";
-        $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach");
-        while ($data = mysqli_fetch_assoc($res)) {
-            $d=$data['cID'];
-            echo "<a href='communiquer2.php?cID=$d'><br>" . $data['Prenom'] . "</br>";
+        $res=mysqli_query($db_handle, "SELECT cID FROM coach WHERE cID=$d");
+       /* if((mysqli_num_rows($res))
+        {
+            $verif=$_SESSION['cID'];
         }
+        else
+        {
+            echo 'erreur';
+        }*/
         }
         else
         {
@@ -74,6 +81,7 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <?php echo "<a href='communiquer2.php?cID=$d'>Messages</a>" ?>
     <a href="boiteMail.php">Mail</a>
     <a href="deconnexion.php">Deconnexion</a>
 </body>
