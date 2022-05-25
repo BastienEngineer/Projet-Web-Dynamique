@@ -66,7 +66,7 @@
         </tr>
         <tr>
             <td>Carte Etudiante</td>
-            <td><input type="text" class="form-control" name="carte"></td>
+            <td><input type="text" class="form-control" pattern="[0-9]{6}" name="carte"></td>
         </tr>
         <tr>
         <td colspan="2" align="center">

@@ -62,6 +62,7 @@ else
         VALUES($id, '$_POST[nom]', '$_POST[prenom]', '$_POST[courrier]', '$_POST[mdp]','$_POST[adresse]', '$_POST[ville]', $postal, '$_POST[pays]','$_POST[tel]', $carte)";
         $result =mysqli_query($db_handle, $sql);
         echo "Insertion reussi";
+        header('Location:clientLogin.php');
         }
         else{
             echo "<br>Database not found";
