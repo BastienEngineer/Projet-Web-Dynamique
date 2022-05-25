@@ -27,14 +27,43 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Piscine</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/scripts.js"></script>
 </head>
 <body>
-    <form method="post" action="">
-    <textarea name="message"></textarea>
-    <input type="submit" name="send">
-    </form>
+
+<div class="container d-flex justify-content-center">
+    <div class="card mt-5" style="width:50%;">
+        <form method="post" action="">
+            <div class="d-flex flex-row justify-content-between p-3">
+                <i class="fa fa-chevron-left"></i>
+                <p class="lead font-weight-bold">Chat Room</p>
+                <i class="fa fa-times"></i>
+            </div>
+                <div class="form-group px-3">
+                    <textarea name="message" class="form-control" rows="5" placeholder="Saisir votre message..."></textarea>
+                </div>
+                <div class="col my-4 py-4 text-center">
+                    <?php echo "<a class='btn btn-outline-dark' href='client.php?spe=$spe'>Retour</a>"; ?>
+                    <input class="btn btn-outline-dark" type="submit" name="send">
+                </div>
+        </form>
+    </div>
+</div>
 
 <section>
     <?php
@@ -55,7 +84,6 @@ else
     mysqli_close($db_handle);
     ?>
     <br>
-    <?php echo "<a href='client.php?spe=$spe'>Retour</a>"; ?>
 </section>
 </body>
 </html>
