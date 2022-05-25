@@ -71,6 +71,12 @@ else
             $sql = "INSERT INTO cb (cbID, Numero, Nom, Date, Code)
             VALUES($e, '$_POST[num]', '$_POST[nom]', '$_POST[date]', '$_POST[code]')";
             $result =mysqli_query($db_handle, $sql);
+            $mot="Merci d avoir reserve notre RDV";
+            $dMail=$_SESSION['Mail'];
+            $iD=0;
+            $ins="INSERT INTO mail(eID,destID,email,dest,emet)
+            VALUES($iD,$e,'$mot','$dMail','Service d Omnes Sport')";
+            $result1 =mysqli_query($db_handle, $ins);
         }
         }
         else{
