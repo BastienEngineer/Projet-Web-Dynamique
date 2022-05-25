@@ -19,7 +19,6 @@
     <script src="js/scripts.js"></script>
 </head>
 <body>
-
 <!-- Navigation-->
 <nav id="nav" class="navbar navbar-expand-lg fixed-top py-3">
     <div class="container"><a href="index.html" class="navbar-brand text-uppercase font-weight-bold"><img src="img/logo.png" alt="Logo" width="180"> </a>
@@ -38,20 +37,43 @@
 </nav>
 
 <div class="container my-5 py-5">
-<div class="border border-light py-5 px-5" style="border-radius: 33px;">
-<h3 class="text-center text-white pb-3">Salle de Sport OMNES</h3>
-<div class="row">
-      <div class="col-md-6">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="img/salle.jpg" alt="">
-      </div>
-      <div class="col-md-6 text-white">
-        <p class="lead">Salle: G-001</p>
-        <p class="lead">Téléphone: +33 01 22 33 44 55</p>
-        <p class="lead">Email: salle.sport@omnessports.fr</p>
-        <a class="btn btn-outline-light" href="services.php">Nos services</a>
-      </div>
-</div>
-</div>
+    <div class="row my-5 py-5">
+        <div class="col-lg-4 py-2">
+          <div class="list-group" role="tablist">
+            <a class="list-group-item list-group-item-action" id="onglet1" data-toggle="list" href="#o1">Personnels de la salle de sport</a>
+            <a class="list-group-item list-group-item-action" id="onglet2" data-toggle="list" href="#o2">Horaire de la gym</a>
+            <a class="list-group-item list-group-item-action" id="onglet3" data-toggle="list" href="#o3">Règles sur l’utilisation des machines</a>
+            <a class="list-group-item list-group-item-action" id="onglet4" data-toggle="list" href="#o4">Nouveaux clients</a>
+            <a class="list-group-item list-group-item-action" id="onglet5" data-toggle="list" href="#o5">Alimentation et nutrition</a>
+            <a class="list-group-item list-group-item-action" id="onglet6" data-toggle="list" href="#o6">Gynécologie</a>
+          </div>
+        </div>
+        <div class="col-lg-8 py-2">
+          <div class="tab-content text-white">
+            <div class="tab-pane fade" id="o1">Contenu du premier onglet</div>
+            <div class="tab-pane fade" id="o2">Contenu du deuxième onglet</div>
+            <div class="tab-pane fade" id="o3">
+            <p class="lead">1. Essuyez vos appareils
+            <br>2. Ne soyez pas en retard aux cours collectifs
+            <br>3. Rangez vos poids et vos haltères
+            <br>4. Enlevez-les poids de la barre de musculation
+            <br>5. Ne monopolisez pas les appareils…
+            <br>6. … ni les vestiaires
+            <br>7. Laissez votre téléphone dans votre casier
+            <br>8. La musique doit vraiment adoucir les mœurs
+            <br>9. Soyez prévenants avec les débutants
+            <br>10. Soyez discrets</p>
+            </div>
+            <div class="tab-pane fade" id="o4">
+            <p>Veuillez trouver ci-joint quelques réponses aux questions fréquemment posées.</p>
+            <strong>Le port du masque est-il obligatoire ?</strong>
+            <br>Non, depuis le 28 février, le port du masque n’est plus obligatoire à l’intérieur du club.
+            </div>
+            <div class="tab-pane fade" id="o5">Contenu du cinquieme onglet</div>
+            <div class="tab-pane fade" id="o6">Contenu du sixieme onglet</div>
+          </div>
+        </div>
+    </div>
 </div>
 
 <!-- Footer-->
