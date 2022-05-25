@@ -92,6 +92,18 @@ else
         <input type="submit" value="Ajouter un coach" name="add">  
         <input type="submit" value="Supprimer un coach" name="delete"> 
     </form>
+
+
+    <form method="post" action="creationCV.php">
+    <label for="text">Mail du coach : </label>  
+    <input type="text" class="form-control" placeholder="Mail du coach" name="courrier"/><br/>
+    <label for="text">Formation : </label>  
+    <input type="text" class="form-control" placeholder="Formation" name="formation"/><br/>
+    <label for="text">Experience : </label>  
+    <input type="text" class="form-control" placeholder="Experience" name="experience"/><br/> 
+    <input type="submit" name="cv" value="Creer CV">
+    </form>
+
     <a href="deconnexion.php">Deconnexion</a>
 </body>
 </html>
