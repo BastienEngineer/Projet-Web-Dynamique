@@ -208,7 +208,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
@@ -252,7 +252,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV1.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
@@ -296,7 +296,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV2.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
@@ -341,7 +341,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV3.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
@@ -386,7 +386,7 @@
                         <div class='row'>
                         <div class='col text-center'>
                         <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
-                        <button type='button' class='btn btn-info btn-lg'>Communiquer</button>
+                        <a href='connexionB.php'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='xml/$prenomCV4.xml'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>
                         </div>
