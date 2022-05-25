@@ -4,7 +4,8 @@ $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
 $spe=$_GET["spe"];
-echo $spe;
+$d="";
+
 if (isset($_SESSION['mID'])) {
     $mail=$_SESSION['Mail'];
     $mdp=$_SESSION['MotdePasse'];
@@ -22,11 +23,15 @@ if ($erreur != "") {
 }
 else
 {
+    $database = "omnes";
+    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_found = mysqli_select_db($db_handle, $database);
+    $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach WHERE Specialite='$_GET[spe]'");
+    while ($data = mysqli_fetch_assoc($res)) {
+        $d=$data['cID'];
+    }
     if (isset($_POST["client"])) {
-        $database = "omnes";
-        //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-        $db_handle = mysqli_connect('localhost', 'root', '');
-        $db_found = mysqli_select_db($db_handle, $database);
         if ($db_found) {
         $result =mysqli_query($db_handle, "SELECT * FROM client WHERE Mail='$_POST[courrier]' AND MotdePasse='$_POST[motdepasse]'");
         if (mysqli_num_rows($result)) {
@@ -48,13 +53,6 @@ else
         $_SESSION['MotdePasse']=$data['MotdePasse'];
         }
         echo "</table>";
-        $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach WHERE Specialite='$_GET[spe]'");
-        while ($data = mysqli_fetch_assoc($res)) {
-            $d=$data['cID'];
-            echo $d;
-            echo $spe;
-            echo "<a href='communiquer2.php?cID=$d'><br>" . $data['Prenom'] . "</br>";
-        }
         }
         else
         {
@@ -77,7 +75,8 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <a href="boiteMail.php">Mail</a>
+    <?php echo "<a href='communiquer2.php?cID=$d&spe=$spe'>Message</a>"; ?>
+    <?php echo "<a href='boiteMail.php?spe=$spe'>Mail</a>"; ?>
     <a href="deconnexion.php">Deconnexion</a>
 </body>
 </html>

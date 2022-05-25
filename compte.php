@@ -43,7 +43,7 @@
                 <form action="connexion.php" method="post">
                     <input type="submit" class="btn btn-outline-light btn-lg" value="Admin" name="connexion">
                     <input type="submit" class="btn btn-outline-light btn-lg" value="Coach" name="connexion">
-                    <input type="submit" class="btn btn-outline-light btn-lg" value="Client" name="connexion"> 
+                    <!-- <input type="submit" class="btn btn-outline-light btn-lg" value="Client" name="connexion"> -->
                 </form>
             </div>
         </div>

@@ -5,6 +5,7 @@ $database = "omnes";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 $d=$_GET['cID'];
+$spe=$_GET['spe'];
 $e=$_SESSION['mID'];
 if ($db_found) {
     if(isset($_POST['send']))
@@ -53,6 +54,8 @@ else
     //fermer la connexion
     mysqli_close($db_handle);
     ?>
+    <br>
+    <?php echo "<a href='client.php?spe=$spe'>Retour</a>"; ?>
 </section>
 </body>
 </html>
