@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="css/styles.css"?>
+<html>
+  <body>
+    <CVs>
+      <cv>
+        <prenom>Leslie</prenom>
+        <formation>Prof de cardio</formation>
+        <experience>rien</experience>
+      </cv>
+    </CVs>
+  </body>
+</html>

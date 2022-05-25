@@ -73,18 +73,28 @@ $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 if ($db_found) {
 $r=mysqli_query($db_handle, "SELECT * FROM cv WHERE cvID=$idCoach");
-$document = new DomDocument();
+$document = new DOMDocument( "1.0", "UTF-8" );
 $document->preserveWhiteSpace = false;
 $document->formatOutput = true;
+
+$xslt = $document->createProcessingInstruction('xml-stylesheet', 'type="text/css" href="css/styles.css"');
+$document->appendChild($xslt);
+
+$html = $document->createElement('html');
+$document->appendChild($html);
+
+$body = $document->createElement('body');
+$html->appendChild($body);
+
 // on cree la racine et on l insère dans le document
-$cvs = $document->createElement('CVs');
-$document->appendChild($cvs);
+$div = $document->createElement('CVs');
+$body->appendChild($div); 
 
 if(mysqli_num_rows($r))
 {
     while ($data = mysqli_fetch_assoc($r)) {
         $cv=$document->createElement('cv');
-        $cvs->appendChild($cv);
+        $div->appendChild($cv);
         $prenomCV=$document->createElement('prenom');
         $i1=$document->createTextNode($data['prenom']);
         $prenomCV->appendChild($i1);
@@ -100,6 +110,7 @@ if(mysqli_num_rows($r))
         $experienceCV->appendChild($i3);
         $cv->appendChild($experienceCV);
     }
+    $document->appendChild($html);
     $document->save("xml/$prenomCoach.xml");
     echo "Export XML fini !";
 }

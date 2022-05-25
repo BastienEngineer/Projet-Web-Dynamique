@@ -1,0 +1,27 @@
+.prenom {
+    width: 650px;
+    text-align: center;
+    color: white;
+    background-color: #336699;
+    padding: 20px;
+    margin: 0 auto 20px auto;
+    border-radius: 5px;
+}
+CVs {
+    display: block;
+    width: 8em;
+    font-weight: bold;
+    font-size: 200%;
+    content: "Oceans";
+    margin: -.75em 0px .25em -.25em;
+    padding: .1em .25em;
+    background-color: #cdf;
+    }
+  
+  CVs {
+    display: block;
+    margin: 2em 1em;
+    border: 4px solid #cdf;
+    padding: 0px 1em;
+    background-color: white;
+    }
