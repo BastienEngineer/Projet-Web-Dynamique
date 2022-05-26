@@ -26,11 +26,16 @@ if ($erreur != "") {
 }
 else
 {
+    $database = "omnes";
+    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_found = mysqli_select_db($db_handle, $database);
+    $res=mysqli_query($db_handle, "SELECT mID,Prenom FROM client");
+    while ($data = mysqli_fetch_assoc($res)) {
+        $d=$data['mID'];
+        echo "<a href='communiquer.php?mID=$d'><br>" . $data['Prenom'] . "</br>";
+    }
     if (isset($_POST["coach"])) {
-        $database = "omnes";
-        //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-        $db_handle = mysqli_connect('localhost', 'root', '');
-        $db_found = mysqli_select_db($db_handle, $database);
         if ($db_found) {
         $result =mysqli_query($db_handle, "SELECT * FROM coach WHERE Nom='$_POST[nom]' AND Prenom='$_POST[prenom]' AND Mail='$_POST[courrier]' ORDER BY cID ");
         if (mysqli_num_rows($result)) {
@@ -53,11 +58,6 @@ else
         $_SESSION['Mail']=$data['Mail'];
         }
         echo "</table>";
-        $res=mysqli_query($db_handle, "SELECT mID,Prenom FROM client");
-        while ($data = mysqli_fetch_assoc($res)) {
-            $d=$data['mID'];
-            echo "<a href='communiquer.php?mID=$d'><br>" . $data['Prenom'] . "</br>";
-        }
         }
         else
         {
