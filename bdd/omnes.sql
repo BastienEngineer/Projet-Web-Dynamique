@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 25 mai 2022 à 14:51
+-- Généré le :  jeu. 26 mai 2022 à 20:16
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -100,8 +100,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 INSERT INTO `client` (`mID`, `Nom`, `Prenom`, `Mail`, `MotdePasse`, `Adresse`, `Ville`, `Postal`, `Pays`, `Tel`, `CarteE`) VALUES
 (20, 'Coupart', 'Clarice', 'clarice@gmail.com ', 'clarice', 'Grand Rue', 'Marseille', 13005, 'France', '0494747768', 127675),
 (21, 'Gosselin', 'Landers', 'landers@gmail.com ', 'landers', 'Place de la Gare', 'Colombes', 92700, 'France', '0186680100', 173088),
-(22, 'a', 'b', 'a@gmail.com', '123', 'rue', 'Paris', 75000, 'France', '0601010101', 222222),
-(23, 'b', 'b', 'b@gmail.com', '123', 'e', 'C', 75000, 'France', '0612121212', 111111);
+(22, 'test', 'test', 'test@gmail.com', '123', 'rue', 'Paris', 75000, 'France', '0601010101', 222222);
 
 -- --------------------------------------------------------
 
@@ -151,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `cv` (
   `formation` varchar(255) NOT NULL,
   `experience` varchar(255) NOT NULL,
   PRIMARY KEY (`cvID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `cv`
@@ -160,7 +159,15 @@ CREATE TABLE IF NOT EXISTS `cv` (
 INSERT INTO `cv` (`cvID`, `prenom`, `formation`, `experience`) VALUES
 (1, 'Tibo', 'prof de sport', 'BAC S'),
 (2, 'Sissy', 'Prof de fitness', 'BAC ES'),
-(6, 'Kevin', 'prof de basket', 'BAC S');
+(3, 'Nassim', 'Formation au e-commerce', 'Diplome en commerce'),
+(4, 'Leslie', 'Prof de fitness', 'Diplome de droit'),
+(5, 'Jessica', 'Enseignante d EPS', 'DESJEPS'),
+(6, 'Kevin', 'prof de basket', 'BAC S'),
+(7, 'Cristiano', 'club de football au portugal', 'Joueur pro de football '),
+(8, 'Antoine', 'joueur pro de rugby dans l equipe de France', 'BAC S'),
+(9, 'Rafael', 'Joueur de tennis professionnel', 'CPJEPS'),
+(10, 'Laure', 'nageuse de competition', 'BPJEPS'),
+(11, 'Matthieu', 'Entraineur de plongeon', 'DEJEPS');
 
 -- --------------------------------------------------------
 
@@ -175,7 +182,48 @@ CREATE TABLE IF NOT EXISTS `echange` (
   `dest` int(11) NOT NULL,
   `emet` int(11) NOT NULL,
   PRIMARY KEY (`msgID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf32;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `emploistemps`
+--
+
+DROP TABLE IF EXISTS `emploistemps`;
+CREATE TABLE IF NOT EXISTS `emploistemps` (
+  `c_id` int(11) NOT NULL,
+  `lundi_AM` tinyint(1) NOT NULL,
+  `lundi_PM` tinyint(1) NOT NULL,
+  `mardi_AM` tinyint(1) NOT NULL,
+  `mardi_PM` tinyint(1) NOT NULL,
+  `mercredi_AM` tinyint(1) NOT NULL,
+  `mercredi_PM` tinyint(1) NOT NULL,
+  `jeudi_AM` tinyint(1) NOT NULL,
+  `jeudi_PM` tinyint(1) NOT NULL,
+  `vendredi_AM` tinyint(1) NOT NULL,
+  `vendredi_PM` tinyint(1) NOT NULL,
+  `samedi_AM` tinyint(1) NOT NULL,
+  `samediPM` tinyint(1) NOT NULL,
+  PRIMARY KEY (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Déchargement des données de la table `emploistemps`
+--
+
+INSERT INTO `emploistemps` (`c_id`, `lundi_AM`, `lundi_PM`, `mardi_AM`, `mardi_PM`, `mercredi_AM`, `mercredi_PM`, `jeudi_AM`, `jeudi_PM`, `vendredi_AM`, `vendredi_PM`, `samedi_AM`, `samediPM`) VALUES
+(1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0),
+(2, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0),
+(3, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1),
+(4, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0),
+(5, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1),
+(6, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0),
+(7, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0),
+(8, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0),
+(9, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1),
+(10, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1),
+(11, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -191,16 +239,26 @@ CREATE TABLE IF NOT EXISTS `mail` (
   `dest` varchar(255) NOT NULL,
   `emet` varchar(255) NOT NULL,
   PRIMARY KEY (`eID`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf32;
+
+-- --------------------------------------------------------
 
 --
--- Déchargement des données de la table `mail`
+-- Structure de la table `rdv`
 --
 
-INSERT INTO `mail` (`eID`, `destID`, `email`, `dest`, `emet`) VALUES
-(21, 20, 'Merci d avoir reserve notre RDV', 'clarice@gmail.com ', 'Service d Omnes Sport'),
-(22, 20, 'Merci d avoir reserve notre RDV', 'clarice@gmail.com ', 'Service d Omnes Sport'),
-(23, 22, 'Merci d avoir reserve notre RDV', 'a@gmail.com', 'Service d Omnes Sport');
+DROP TABLE IF EXISTS `rdv`;
+CREATE TABLE IF NOT EXISTS `rdv` (
+  `rID` int(11) NOT NULL AUTO_INCREMENT,
+  `c_id` int(11) NOT NULL,
+  `clientID` int(11) NOT NULL,
+  `jour` varchar(255) NOT NULL,
+  `horaire` varchar(255) NOT NULL,
+  `ligne` int(11) NOT NULL,
+  `colonne` int(11) NOT NULL,
+  `reserve` tinyint(1) NOT NULL,
+  PRIMARY KEY (`rID`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf32;
 
 --
 -- Contraintes pour les tables déchargées
@@ -217,6 +275,12 @@ ALTER TABLE `cb`
 --
 ALTER TABLE `cv`
   ADD CONSTRAINT `cv_ibfk_1` FOREIGN KEY (`cvID`) REFERENCES `coach` (`cID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `emploistemps`
+--
+ALTER TABLE `emploistemps`
+  ADD CONSTRAINT `emploistemps_ibfk_1` FOREIGN KEY (`c_id`) REFERENCES `coach` (`cID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

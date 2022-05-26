@@ -72,8 +72,7 @@
     $jour = isset($_POST["jour"])? $_POST["jour"] : "";
     $horaire = isset($_POST["horaire"])? $_POST["horaire"] : "";
     $c_id = isset($_POST["c_id"])? $_POST["c_id"] : "";
-    echo $jour;
-    echo $horaire;
+
     $database = "omnes";
     $db_handle = mysqli_connect('localhost', 'root', '' );
     $db_found = mysqli_select_db($db_handle, $database);
@@ -94,10 +93,9 @@
             else
             {
                 $i=0;
-                //$sql = "INSERT INTO `rdv`(rID,c_id,clientID,jour,horaire,ligne,colonne,reserve) VALUES ($i, $c_id,  $mID,'$jo','$_POST[horaire]', $ligne , $colonne ,  1 )";
                 $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '", "' . $c_id . '", "' . $mID . '", "' . $jour . '", "' . $horaire . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
                 $result = mysqli_query($db_handle, $sql);
-                //header("Location: payement.php?spe=$spe");
+                header("Location: payement.php?spe=$spe");
             }
         }
     }
