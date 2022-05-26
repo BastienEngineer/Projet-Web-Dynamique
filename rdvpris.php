@@ -93,7 +93,7 @@
                 $i=0;
                 $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '","' . $c_id . '","' . $mID . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
                 $result = mysqli_query($db_handle, $sql);
-                header("Location: payement.php?spe=$spe")
+                header("Location: payement.php?spe=$spe");
             }
         }
     }

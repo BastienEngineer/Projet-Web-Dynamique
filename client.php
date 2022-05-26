@@ -4,6 +4,7 @@ $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
 $spe=$_GET["spe"];
+$e=$_SESSION['mID'];
 $d="";
 
 if (isset($_SESSION['mID'])) {
