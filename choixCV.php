@@ -37,12 +37,10 @@
         <input type="text" class="form-control" placeholder="Experience" name="experience"/><br/> 
     </div>
     <div class="text-center">
+        <a class="btn btn-outline-light btn-lg" href="admin.php">Retour</a>
         <input type="submit" class="btn btn-outline-light btn-lg" name="cv" value="Creer CV">
     </div>  
     </form>
-    <div class="text-center">
-    <a class="btn btn-outline-light btn-lg" href="admin.php">Retour</a>
-    </div>
     </div>
     </div>
     </div>

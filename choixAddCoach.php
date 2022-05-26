@@ -22,8 +22,8 @@
 <div class="container my-5 py-5">
     <div class="border border-light py-5" style="border-radius: 33px;">
     <div class="row h-100 justify-content-center align-items-center">
-    <div class="col-10 col-md-8 col-lg-4">
     <form action="adminTraitement.php" method="post">
+    <div class="col">
     <div class="form-group"> 
         <label for="text">Nom : </label>  
         <input type="text" class="form-control" name="nom"/><br/>
@@ -40,7 +40,7 @@
     </div>
 
     <div class="form-group"> 
-        <label for="text">Specialite : </label>  
+        <label for="text">Specialité : </label>  
         <input type="text" class="form-control" name="spe"/><br/>
     </div>
     <div class="form-group"> 
@@ -51,15 +51,13 @@
         <label for="text">Bureau (Salle) : </label>  
         <input type="text" class="form-control" name="salle"/><br/>
     </div>
-
-    <div class="text-center">
+    </div>
+    <div class="col text-center">
+        <a class="btn btn-outline-light btn-lg" href="admin.php">Retour</a>
         <input type="submit"  class="btn btn-outline-light btn-lg" value="Ajouter un coach" name="add">  
         <input type="submit"  class="btn btn-outline-light btn-lg" value="Supprimer un coach" name="delete"> 
     </div>  
     </form>
-    <div class="text-center">
-    <a class="btn btn-outline-light btn-lg" href="admin.php">Retour</a>
-    </div>
     </div>
     </div>
     </div>
