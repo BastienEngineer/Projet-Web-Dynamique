@@ -153,7 +153,7 @@
             }
         }
         echo '</tr>';
-        echo '<tr><td rowspan="14">$spe</td><td rowspan="14">$nom</td>';
+        echo '<tr><td rowspan="14">'.$spe. '</td><td rowspan="14">' .$nom. '</td>';
         for($h=0; $h < 12; $h++)
         {
             if($array[$h] == 1)
@@ -213,7 +213,7 @@
                     $heure = 14 + $ajoutheure;
                 }
                 echo '<td';                
-                $sql = "SELECT * FROM `rdv` WHERE `c_id` = $c_id and `ligne` =" . $i . " and `colonne` =" . $j . " ;";
+                $sql = "SELECT * FROM `rdv` WHERE `c_id` =" . $c_id . " and `ligne` =" . $i . " and `colonne` =" . $j . " ;";
                 $result = mysqli_query($db_handle, $sql);
 
                 $deuxfois = false;
@@ -233,7 +233,7 @@
                     {
                         while ($data = mysqli_fetch_array($result))
                         {
-                            if($data[3] == 1)
+                            if($data[4] == 1)
                             {
                                 echo ' class="reserve">';
                             }
@@ -279,7 +279,7 @@
             echo '</tr>';
         }
         echo '</table>';
-        echo '<form action="rdvpris.php" method="post">';
+        echo "<form action='rdvpris.php?spe=$spe' method='post'>";
         echo '<div id="jour"></div>';
         echo '<div id="horaire"></div>';
         echo '<input type="hidden" id="ligne" name="ligne" />';
