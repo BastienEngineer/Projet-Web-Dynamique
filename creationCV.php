@@ -77,18 +77,20 @@ $document = new DOMDocument( "1.0", "UTF-8" );
 $document->preserveWhiteSpace = false;
 $document->formatOutput = true;
 
-$xslt = $document->createProcessingInstruction('xml-stylesheet', 'type="text/css" href="css/styles.css"');
+$xslt = $document->createProcessingInstruction('xml-stylesheet', 'type="text/css" href="css/xml.css"');
 $document->appendChild($xslt);
 
+/*
 $html = $document->createElement('html');
 $document->appendChild($html);
 
 $body = $document->createElement('body');
 $html->appendChild($body);
-
+*/
 // on cree la racine et on l insère dans le document
 $div = $document->createElement('CVs');
-$body->appendChild($div); 
+//$body->appendChild($div); 
+$document->appendChild($div); 
 
 if(mysqli_num_rows($r))
 {
@@ -110,7 +112,7 @@ if(mysqli_num_rows($r))
         $experienceCV->appendChild($i3);
         $cv->appendChild($experienceCV);
     }
-    $document->appendChild($html);
+    //$document->appendChild($html);
     $document->save("xml/$prenomCoach.xml");
     echo "Export XML fini !";
 }
