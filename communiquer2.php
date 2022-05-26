@@ -15,7 +15,7 @@ if ($db_found) {
         $sql="INSERT INTO echange(msgID,sms,dest,emet)
         VALUES($i,'$m',$d,$e)";
         $result =mysqli_query($db_handle, $sql);
-        echo "Message Envoye";
+        echo "<script type='text/javascript'>alert('Message envoyé');</script>";
     }
 }
 else
@@ -65,18 +65,19 @@ else
     </div>
 </div>
 
-<section>
+<div class="container d-flex justify-content-center">
+<div class="card mt-5 mb-5" style="width:50%;">
     <?php
     $getmsg=mysqli_query($db_handle, "SELECT * FROM echange WHERE (dest=$e AND emet=$d) OR (dest=$d AND emet=$e)");
     while ($data = mysqli_fetch_assoc($getmsg)) {
         if($data['dest'] == $e)
         {
-            ?><p style="color:red;"><?php echo $data['sms']; ?></p>
+            ?><p class="px-3 text-right" style="color:red;"><?php echo $data['sms']; ?></p>
             <?php   
         }
         else if($data['dest'] == $d)
         {
-            ?><p style="color:blue;"><?php echo $data['sms']; ?></p>
+            ?><p class="px-3 text-left" style="color:blue;"><?php echo $data['sms']; ?></p>
             <?php 
         }
     }
@@ -84,6 +85,7 @@ else
     mysqli_close($db_handle);
     ?>
     <br>
-</section>
+</div>
+</div>
 </body>
 </html>
