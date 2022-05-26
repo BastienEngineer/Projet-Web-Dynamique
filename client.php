@@ -4,10 +4,11 @@ $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
 $spe=$_GET["spe"];
-$e=$_SESSION['mID'];
+$e=0;
 $d="";
 
 if (isset($_SESSION['mID'])) {
+    $e=$_SESSION['mID'];
     $mail=$_SESSION['Mail'];
     $mdp=$_SESSION['MotdePasse'];
 } 

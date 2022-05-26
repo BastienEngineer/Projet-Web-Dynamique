@@ -23,6 +23,7 @@ $(function () {
 });
 
 function priseRDV(i, j, t, c) {
+
 if (t == 0 || t == 1) {
   document.getElementById('jour').innerHTML = 'Lundi';
 }
@@ -115,4 +116,8 @@ else {
 document.getElementById('ligne').value = i;
 document.getElementById('colonne').value = j;
 document.getElementById('c_id').value = c;
+var a=document.getElementById('jour').innerHTML;
+var b=document.getElementById('horaire').innerHTML;
+document.getElementById('jo').value=a;
+document.getElementById('ho').value=b;
 }

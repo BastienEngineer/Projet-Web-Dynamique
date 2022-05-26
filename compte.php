@@ -36,8 +36,8 @@
     </div>
 </nav>
 
+<div class="container-fluid my-5 py-5">
 <div class="text-center text-white my-5 py-5">
-    <div class="container-fluid">
         <div class="my-5 py-5">
             <div class="row justify-content-center align-items-center h-100">
                 <form action="connexion.php" method="post">
