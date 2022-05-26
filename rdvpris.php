@@ -66,6 +66,7 @@
     <div class="container">';
     
     $spe=$_GET['spe'];
+    $mID=$_GET['mID'];
     $ligne = isset($_POST["ligne"])? $_POST["ligne"] : "";
     $colonne = isset($_POST["colonne"])? $_POST["colonne"] : "";
     $c_id = isset($_POST["c_id"])? $_POST["c_id"] : "";
@@ -85,22 +86,21 @@
             if (mysqli_num_rows($result) != 0)
             {
 	            echo "<p>Deja reserve.</p>";
-                echo "<a class='btn btn-outline-dark' href='rdv.php?spe=$spe'>Retour</a>";
+                echo "<a class='btn btn-outline-dark' href='rdv.php?mID=$mID&spe=$spe'>Retour</a>";
             }
             else
             {
                 $i=0;
-                $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '","' . $c_id . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
+                $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '","' . $c_id . '","' . $mID . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
                 $result = mysqli_query($db_handle, $sql);
-                echo 'Merci d avoir pris un rendez-vous !!!';
+                header("Location: payement.php?spe=$spe")
             }
         }
     }
     else
     {
         echo "Erreur:<br>" . $erreur;
-        echo "<a class='btn btn-outline-dark' href='rdv.php?spe=$spe'>Retour</a>";
-
+        echo "<a class='btn btn-outline-dark' href='rdv.php?mID=$mID&spe=$spe'>Retour</a>";
     }
     
 

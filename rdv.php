@@ -66,6 +66,7 @@
     
     $c_id=0;
     $spe=$_GET['spe'];
+    $mID=$_GET['mID'];
     $nom="";
     $database = "omnes";
     $db_handle = mysqli_connect('localhost', 'root', '' );
@@ -233,7 +234,7 @@
                     {
                         while ($data = mysqli_fetch_array($result))
                         {
-                            if($data[4] == 1)
+                            if($data[5] == 1)
                             {
                                 echo ' class="reserve">';
                             }
@@ -279,13 +280,14 @@
             echo '</tr>';
         }
         echo '</table>';
-        echo "<form action='rdvpris.php?spe=$spe' method='post'>";
+        echo "<form action='rdvpris.php?mID=$mID&spe=$spe' method='post'>";
         echo '<div id="jour"></div>';
         echo '<div id="horaire"></div>';
         echo '<input type="hidden" id="ligne" name="ligne" />';
         echo '<input type="hidden" id="colonne" name="colonne" />';
         echo '<input type="hidden" id="c_id" name="c_id" />';
         echo '<input type="submit" value="Prendre rendez-vous" />';
+        echo "<a class='btn btn-outline-dark' href='client.php?spe=$spe'>Retour</a>";
         echo '</form>';
     }
 

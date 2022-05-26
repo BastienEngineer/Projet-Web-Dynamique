@@ -26,7 +26,9 @@
     <h4>Payer votre séance</h4>
     </div>
     <div class="card-body">
-    <form action="validerPayement.php" method="post" class="was-validated">
+    <?php 
+    $spe=$_GET['spe'];
+    echo"<form action='validerPayement.php?spe=$spe' method='post' class='was-validated'>"; ?>
         <div class="form-group">
         <div class="row">
         <h5 class="card-title">Type de carte de paiement</h5>

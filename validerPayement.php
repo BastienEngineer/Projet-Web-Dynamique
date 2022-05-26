@@ -5,6 +5,7 @@ $num = isset($_POST["num"])? $_POST["num"] : "";
 $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $date = isset($_POST["date"])? $_POST["date"] : "";
 $code = isset($_POST["code"])? $_POST["code"] : "";
+$spe=$_GET['spe'];
 
 $erreur = "";
 if (empty($carte)) {
@@ -24,7 +25,7 @@ if ($code == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:payement.php"); 
+    header("Location:payement.php?spe=$spe"); 
 }
 else
 {
@@ -60,10 +61,11 @@ else
             $insert="INSERT INTO mail(eID,destID,email,dest,emet)
             VALUES($i,$e,'$m','$d','Service d Omnes Sport')";
             $result =mysqli_query($db_handle, $insert);
+            header("Location:client.php?spe=$spe");
             }
             else
             {
-                header("Location:payement.php");
+                header("Location:payement.php?spe=$spe");
             }
         }
         else
