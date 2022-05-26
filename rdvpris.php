@@ -86,7 +86,8 @@
             {
 	                echo "<p>Deja reserve.</p>";
             }
-            $sql = 'INSERT INTO `rdv` VALUES ("' . $c_id . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
+            $i=0;
+            $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '","' . $c_id . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
             $result = mysqli_query($db_handle, $sql);
             echo 'Merci d avoir pris un rendez-vous !!!';
         }

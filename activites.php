@@ -208,7 +208,7 @@
                         <div class='container'>
                         <div class='row'>
                         <div class='col text-center'>
-                        <button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button>
+                        <a href='rdv.php?spe=$spe'><button type='button' class='btn btn-success btn-lg'>Prendre un RDV</button></a>
                         <a href='connexionB.php?spe=$spe'><button type='button' class='btn btn-info btn-lg'>Communiquer</button></a>
                         <a href='displayCV.php?p=$prenomCV'><button type='button' class='btn btn-secondary btn-lg'>Voir son CV</button></a>
                         </div>

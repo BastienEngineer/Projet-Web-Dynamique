@@ -19,7 +19,6 @@
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="js/scripts.js"></script>
-    <script src="js/scripts_E.js"></script>
 </head>
 <body>
 
@@ -65,15 +64,22 @@
     <!-- Section -->
     <div class="container">';
     
-
-    $c_id = 1;
-
+    $c_id=0;
+    $spe=$_GET['spe'];
+    $nom="";
     $database = "omnes";
     $db_handle = mysqli_connect('localhost', 'root', '' );
     $db_found = mysqli_select_db($db_handle, $database);
+    $s = "SELECT * FROM coach WHERE Specialite='$spe'";
+    $res = mysqli_query($db_handle, $s);
+    while ($data = mysqli_fetch_array($res))
+    {
+        $c_id=$data['cID'];
+        $nom=$data['Prenom'];
+    }
     if ($db_found)
     {
-        $sql = "SELECT * FROM `emploisTemps` WHERE `c_id` = 1;";
+        $sql = "SELECT * FROM `emploisTemps` WHERE `c_id` = $c_id;";
         $result = mysqli_query($db_handle, $sql);
         while ($data = mysqli_fetch_array($result))
         {
@@ -147,7 +153,7 @@
             }
         }
         echo '</tr>';
-        echo '<tr><td rowspan="14">Musculation</td><td rowspan="14">DUMAIS Guy</td>';
+        echo '<tr><td rowspan="14">$spe</td><td rowspan="14">$nom</td>';
         for($h=0; $h < 12; $h++)
         {
             if($array[$h] == 1)
