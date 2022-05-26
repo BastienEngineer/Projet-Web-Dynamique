@@ -19,25 +19,42 @@
     <script src="js/scripts.js"></script>
 </head>
 <body>
-<div class="container my-5 py-5">
-<div class="row h-100 justify-content-center align-items-center">
-<div class="card text-center">
-    <div class="card-header">
+<div class="container d-flex justify-content-center">
+<div class="card mt-5" style="width:50%;">
+    <div class="card-header text-center">
     <h4>CV</h4>
     </div>
-        <div class="form-group row">
+    <div class="card-body">
         <?php
         $prenomCV=$_GET["p"];
         $xmldata = simplexml_load_file("xml/$prenomCV.xml") or die("Failed to load");
-        foreach($xmldata->children() as $cv) {         
-            echo "<p>$cv->prenom </p>";  
-            echo "<p>$cv->formation </p>";    
-            echo "<p>$cv->experience </p>";
-        } 
+        foreach($xmldata->children() as $cv) {    
         ?>
+        <div class="form-group row">
+        <label for="prenom" class="col-sm-6 col-form-label">Prénom</label>
+        <div class="col-sm-6">
+        <input id="prenom" class="form-control" type="text" value="<?php echo "$cv->prenom"; ?>" disabled>
+        </div>
+        </div>  
+        <div class="form-group row">
+        <label for="formation" class="col-sm-6 col-form-label">Formation</label>
+        <div class="col-sm-6">
+        <input id="formation" class="form-control" type="text" value="<?php echo "$cv->formation"; ?>" disabled>
+        </div>
+        </div>
+        <div class="form-group row">
+        <label for="exp" class="col-sm-6 col-form-label">Expérience</label>
+        <div class="col-sm-6">
+        <input id="exp" class="form-control" type="text" value="<?php echo "$cv->experience"; ?>" disabled>
+        </div>
+        </div>     
+        <?php 
+        }
+        ?>
+        <div class="col mt-5 pt-5 text-center">
         <a href="parcourir.html"><input class="btn btn-outline-dark btn-lg" type="submit" value="Retour"></a>
         </div>
-        
+    </div>
   </div>
 </div>
 </div>
