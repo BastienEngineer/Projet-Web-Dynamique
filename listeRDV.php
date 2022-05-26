@@ -5,7 +5,10 @@ $database = "omnes";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 $e=$_SESSION['mID'];
+$spe=$_GET['spe'];
 $rdv="";
+$jour="";
+$horaire="";
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +35,8 @@ $rdv="";
 <div class="container d-flex justify-content-center">
 <div class="card mt-5" style="width:50%;">
     <div class="card-header text-center">
-    <h4>Voici votre liste de RDV</h4>
+    <h4>Voici votre liste de RDV </h4>
+    <h4>Cliquez sur votre RDV pour annuler</h4>
     </div>
     <div class="card-body">
     <?php 
@@ -41,9 +45,11 @@ $rdv="";
             $r=mysqli_query($db_handle,$getID);
             if (mysqli_num_rows($r)) 
             {
-                while ($data = mysqli_fetch_assoc($getID)) {
+                while ($data = mysqli_fetch_assoc($r)) {
                     $rdv=$data['rID'];
-                    echo "<a class='btn btn-outline-light' href='annulerRDV.php?spe=$spe&rID=$rdv'>" . $data['jour'] . $data['horaire']"</a>";
+                    $jour=$data['jour'];
+                    $horaire=$data['horaire'];
+                    echo "<a class='btn btn-outline-light' href='annulerRDV.php?spe=$spe&rID=$rdv'>" .$jour. " " .$horaire. "</a>";
                 }
             }
             else

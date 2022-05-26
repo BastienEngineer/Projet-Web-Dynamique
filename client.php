@@ -97,7 +97,7 @@ else
         <div class="row justify-content-center align-items-center">
             <div class="col my-4 py-4 text-center">
                 <?php echo "<a class='btn btn-outline-light btn-lg' href='rdv.php?mID=$e&spe=$spe'>Prendre RDV</a>"; ?>
-                <?php echo "<a class='btn btn-outline-light btn-lg' href='listeRDV.php'>Liste RDV</a>"; ?>
+                <?php echo "<a class='btn btn-outline-light btn-lg' href='listeRDV.php?spe=$spe'>Liste RDV</a>"; ?>
                 <?php echo "<a class='btn btn-outline-light btn-lg' href='communiquer2.php?cID=$d&spe=$spe'>Message</a>"; ?>
                 <?php echo "<a class='btn btn-outline-light btn-lg' href='boiteMail.php?spe=$spe'>Mail</a>"; ?>
                 <a class="btn btn-outline-light btn-lg" href="deconnexion.php">Deconnexion</a>
