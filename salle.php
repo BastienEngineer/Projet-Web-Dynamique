@@ -54,6 +54,7 @@
 </div>
 </div>
 
+
 <!-- Footer-->
 <footer id="footer" class="bg-white">
     <div class="container py-5">
@@ -61,9 +62,9 @@
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <h6 class="text-uppercase font-weight-bold mb-4">Contact</h6>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2"><a class="text-muted">Téléphone :</a></li>
-              <li class="mb-2"><a class="text-muted">Mail : </a></li>
-              <li class="mb-2"><a class="text-muted">Adresse : </a></li>
+              <li class="mb-2"><a class="text-muted">Téléphone : +33 01 22 33 44 55</a></li>
+              <li class="mb-2"><a class="text-muted">Mail : salle.sport@omnessports.fr</a></li>
+              <li class="mb-2"><a class="text-muted">Adresse : 43 Quai de Grenelle, 75015 Paris</a></li>
             </ul>
             <ul class="list-inline mt-4">
               <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
@@ -84,7 +85,7 @@
               <div class="input-group">
                 <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
                 <div class="input-group-append">
-                  <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                  <a href="index.html"><button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button></a>
                 </div>
               </div>
             </div>
