@@ -28,7 +28,8 @@
     <div class="card-body">
     <?php 
     $spe=$_GET['spe'];
-    echo"<form action='validerPayement.php?spe=$spe' method='post' class='was-validated'>"; ?>
+    $i=$_GET['rID'];
+    echo"<form action='validerPayement.php?spe=$spe&rID=$i' method='post' class='was-validated'>"; ?>
         <div class="form-group">
         <div class="row">
         <h5 class="card-title">Type de carte de paiement</h5>

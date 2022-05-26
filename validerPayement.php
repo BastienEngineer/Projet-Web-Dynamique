@@ -6,7 +6,9 @@ $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $date = isset($_POST["date"])? $_POST["date"] : "";
 $code = isset($_POST["code"])? $_POST["code"] : "";
 $spe=$_GET['spe'];
-
+$rID=$_GET['rID'];
+$jour="";
+$horaire="";
 $erreur = "";
 if (empty($carte)) {
     $erreur .= "Le champ carte est vide. <br>";
@@ -25,7 +27,7 @@ if ($code == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:payement.php?spe=$spe"); 
+    header("Location:payement.php?spe=$spe&rID=$rID"); 
 }
 else
 {
@@ -55,17 +57,23 @@ else
             echo "</tr>";
             }
             echo "</table>";
-            $m="Merci d avoir reserve notre RDV";
+            $res1=mysqli_query($db_handle, "SELECT * FROM rdv WHERE clientID=$e AND rID=$rID");
+            while ($data1 = mysqli_fetch_assoc($res1)) {
+               $jour=$data1['jour'];
+               $horaire=$data1['horaire'];
+
+            }
+            $m="Merci d avoir reserve notre RDV le $jour a $horaire ";
             $d=$_SESSION['Mail'];
             $i=0;
             $insert="INSERT INTO mail(eID,destID,email,dest,emet)
-            VALUES($i,$e,'$m','$d','Service d Omnes Sport')";
+            VALUES($i,$e,'$m','$d','Service d Omnes Sport ')";
             $result =mysqli_query($db_handle, $insert);
             header("Location:client.php?spe=$spe");
             }
             else
             {
-                header("Location:payement.php?spe=$spe");
+                header("Location:payement.php?spe=$spe&rID=$rID");
             }
         }
         else
@@ -73,12 +81,18 @@ else
             $sql = "INSERT INTO cb (cbID, Numero, Nom, Date, Code)
             VALUES($e, '$_POST[num]', '$_POST[nom]', '$_POST[date]', '$_POST[code]')";
             $result =mysqli_query($db_handle, $sql);
-            $mot="Merci d avoir reserve notre RDV";
+            $res1=mysqli_query($db_handle, "SELECT * FROM rdv WHERE clientID=$e AND rID=$rID");
+            while ($data1 = mysqli_fetch_assoc($res1)) {
+               $jour=$data1['jour'];
+               $horaire=$data1['horaire'];
+            }
+            $m="Merci d avoir reserve notre RDV le $jour a $horaire ";
             $dMail=$_SESSION['Mail'];
             $iD=0;
             $ins="INSERT INTO mail(eID,destID,email,dest,emet)
-            VALUES($iD,$e,'$mot','$dMail','Service d Omnes Sport')";
+            VALUES($iD,$e,'$m','$dMail','Service d Omnes Sport')";
             $result1 =mysqli_query($db_handle, $ins);
+            header("Location:client.php?spe=$spe");
         }
         }
         else{
