@@ -10,6 +10,8 @@ $spe=$_GET['spe'];
 if ($db_found) {
     $delete="DELETE FROM rdv WHERE rID=$rdv";
     $r=mysqli_query($db_handle,$delete);
+    $deleteMail="DELETE FROM mail WHERE eID=$rdv";
+    $r2=mysqli_query($db_handle,$deleteMail);
     header("Location:client.php?spe=$spe");
 }
 else

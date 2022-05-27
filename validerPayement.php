@@ -65,9 +65,8 @@ else
             }
             $m="Merci d avoir reserve notre RDV le $jour a $horaire ";
             $d=$_SESSION['Mail'];
-            $i=0;
             $insert="INSERT INTO mail(eID,destID,email,dest,emet)
-            VALUES($i,$e,'$m','$d','Service d Omnes Sport ')";
+            VALUES($rID,$e,'$m','$d','Service d Omnes Sport ')";
             $result =mysqli_query($db_handle, $insert);
             header("Location:client.php?spe=$spe");
             }
@@ -88,9 +87,8 @@ else
             }
             $m="Merci d avoir reserve notre RDV le $jour a $horaire ";
             $dMail=$_SESSION['Mail'];
-            $iD=0;
             $ins="INSERT INTO mail(eID,destID,email,dest,emet)
-            VALUES($iD,$e,'$m','$dMail','Service d Omnes Sport')";
+            VALUES($rID,$e,'$m','$dMail','Service d Omnes Sport')";
             $result1 =mysqli_query($db_handle, $ins);
             header("Location:client.php?spe=$spe");
         }
