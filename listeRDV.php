@@ -5,7 +5,6 @@ $database = "omnes";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 $e=$_SESSION['mID'];
-$spe=$_GET['spe'];
 $rdv="";
 $jour="";
 $horaire="";
@@ -49,7 +48,8 @@ $horaire="";
                     $rdv=$data['rID'];
                     $jour=$data['jour'];
                     $horaire=$data['horaire'];
-                    echo "<a class='btn btn-outline-light' href='annulerRDV.php?spe=$spe&rID=$rdv'>" .$jour. " " .$horaire. "</a>";
+                    $spe=$data['spe'];
+                    echo "<a class='btn btn-outline-light' href='annulerRDV.php?rID=$rdv'>" .$jour. " " .$horaire. " " .$spe. "</a>";
                 }
             }
             else
@@ -67,7 +67,7 @@ $horaire="";
         mysqli_close($db_handle);
     ?>
     <div class="col mt-5 pt-5 text-center">
-    <?php echo "<a class='btn btn-outline-dark' href='client.php?spe=$spe'>Retour</a>"; ?>
+    <?php echo "<a class='btn btn-outline-dark' href='client1.php'>Retour</a>"; ?>
     </div>
     </div>
 </div>

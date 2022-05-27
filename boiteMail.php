@@ -6,7 +6,6 @@ $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 $e=$_SESSION['mID'];
 $de=$_SESSION['Mail'];
-$spe=$_GET['spe'];
 $emet="";
 $dest="";
 $email="";
@@ -88,7 +87,7 @@ $email="";
         mysqli_close($db_handle);
     ?>
     <div class="col mt-5 pt-5 text-center">
-    <?php echo "<a class='btn btn-outline-dark' href='client.php?spe=$spe'>Retour</a>"; ?>
+    <?php echo "<a class='btn btn-outline-dark' href='client1.php'>Retour</a>"; ?>
     </div>
     </div>
 </div>

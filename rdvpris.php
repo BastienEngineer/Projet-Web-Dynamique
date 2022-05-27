@@ -93,7 +93,7 @@
             else
             {
                 $i=0;
-                $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '", "' . $c_id . '", "' . $mID . '", "' . $jour . '", "' . $horaire . '", "' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
+                $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '", "' . $c_id . '", "' . $mID . '", "' . $jour . '", "' . $horaire . '","' . $spe . '" ,"' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
                 $result = mysqli_query($db_handle, $sql);
                 $sql1='SELECT * FROM `rdv` WHERE `ligne` = ' . $ligne . ' and `colonne` = ' . $colonne;
                 $res=mysqli_query($db_handle, $sql1);

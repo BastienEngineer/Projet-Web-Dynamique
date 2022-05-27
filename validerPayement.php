@@ -63,7 +63,7 @@ else
                $horaire=$data1['horaire'];
 
             }
-            $m="Merci d avoir reserve notre RDV le $jour a $horaire ";
+            $m="Merci d avoir reserve notre RDV : $spe le $jour a $horaire ";
             $d=$_SESSION['Mail'];
             $insert="INSERT INTO mail(eID,destID,email,dest,emet)
             VALUES($rID,$e,'$m','$d','Service d Omnes Sport ')";
@@ -85,7 +85,7 @@ else
                $jour=$data1['jour'];
                $horaire=$data1['horaire'];
             }
-            $m="Merci d avoir reserve notre RDV le $jour a $horaire ";
+            $m="Merci d avoir reserve notre RDV : $spe le $jour a $horaire ";
             $dMail=$_SESSION['Mail'];
             $ins="INSERT INTO mail(eID,destID,email,dest,emet)
             VALUES($rID,$e,'$m','$dMail','Service d Omnes Sport')";

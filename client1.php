@@ -3,9 +3,7 @@ session_start();
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
-$spe=$_GET["spe"];
 $e=0;
-$d="";
 
 if (isset($_SESSION['mID'])) {
     $e=$_SESSION['mID'];
@@ -21,7 +19,7 @@ if ($mdp == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:clientLogin.php?spe=$spe"); 
+    header("Location:clientLogin1.php"); 
 }
 else
 {
@@ -29,10 +27,6 @@ else
     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
-    $res=mysqli_query($db_handle, "SELECT cID,Prenom FROM coach WHERE Specialite='$_GET[spe]'");
-    while ($data = mysqli_fetch_assoc($res)) {
-        $d=$data['cID'];
-    }
     if (isset($_POST["client"])) {
         if ($db_found) {
         $result =mysqli_query($db_handle, "SELECT * FROM client WHERE Mail='$_POST[courrier]' AND MotdePasse='$_POST[motdepasse]'");
@@ -58,7 +52,7 @@ else
         }
         else
         {
-            header("Location:clientLogin.php?spe=$spe");
+            header("Location:clientLogin1.php");
         }
         }
         else{
@@ -96,8 +90,8 @@ else
         <h2 class="text-white text-center lead">Cher client, veuillez choisir parmi vos options</h2>
         <div class="row justify-content-center align-items-center">
             <div class="col my-4 py-4 text-center">
-                <?php echo "<a class='btn btn-outline-light btn-lg' href='rdv.php?mID=$e&spe=$spe'>Prendre RDV</a>"; ?>
-                <?php echo "<a class='btn btn-outline-light btn-lg' href='communiquer2.php?cID=$d&spe=$spe'>Message</a>"; ?>
+                <?php echo "<a class='btn btn-outline-light btn-lg' href='listeRDV.php'>Liste RDV</a>"; ?>
+                <?php echo "<a class='btn btn-outline-light btn-lg' href='boiteMail.php'>Mail</a>"; ?>
                 <a class="btn btn-outline-light btn-lg" href="deconnexion.php">Deconnexion</a>
             </div>
         </div>

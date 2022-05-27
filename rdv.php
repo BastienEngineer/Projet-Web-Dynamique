@@ -234,7 +234,7 @@
                     {
                         while ($data = mysqli_fetch_array($result))
                         {
-                            if($data[7] == 1)
+                            if($data[8] == 1)
                             {
                                 echo ' class="reserve">';
                             }
