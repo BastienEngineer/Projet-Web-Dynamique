@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 26 mai 2022 à 20:16
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Généré le : ven. 27 mai 2022 à 09:51
+-- Version du serveur : 5.7.36
+-- Version de PHP : 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `omnes`
+-- Base de données : `omnes`
 --
 
 -- --------------------------------------------------------
@@ -182,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `echange` (
   `dest` int(11) NOT NULL,
   `emet` int(11) NOT NULL,
   PRIMARY KEY (`msgID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
 
@@ -239,7 +238,14 @@ CREATE TABLE IF NOT EXISTS `mail` (
   `dest` varchar(255) NOT NULL,
   `emet` varchar(255) NOT NULL,
   PRIMARY KEY (`eID`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf32;
+
+--
+-- Déchargement des données de la table `mail`
+--
+
+INSERT INTO `mail` (`eID`, `destID`, `email`, `dest`, `emet`) VALUES
+(51, 22, 'Merci d avoir reserve notre RDV : musculation le Vendredi a 10h40 ', 'test@gmail.com', 'Service d Omnes Sport ');
 
 -- --------------------------------------------------------
 
@@ -254,11 +260,19 @@ CREATE TABLE IF NOT EXISTS `rdv` (
   `clientID` int(11) NOT NULL,
   `jour` varchar(255) NOT NULL,
   `horaire` varchar(255) NOT NULL,
+  `spe` varchar(255) NOT NULL,
   `ligne` int(11) NOT NULL,
   `colonne` int(11) NOT NULL,
   `reserve` tinyint(1) NOT NULL,
   PRIMARY KEY (`rID`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf32;
+
+--
+-- Déchargement des données de la table `rdv`
+--
+
+INSERT INTO `rdv` (`rID`, `c_id`, `clientID`, `jour`, `horaire`, `spe`, `ligne`, `colonne`, `reserve`) VALUES
+(51, 1, 22, 'Vendredi', '10h40', 'musculation', 5, 4, 1);
 
 --
 -- Contraintes pour les tables déchargées
