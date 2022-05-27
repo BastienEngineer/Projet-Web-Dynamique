@@ -208,7 +208,8 @@
                         echo "<th>" . "Specialité" . "</th>";
                         echo "<th>" . "Mail" . "</th>";
                         echo "<th>" . "Bureau" . "</th>";
-                        $req1=mysqli_query($conn, $sql); 
+                        $req1=mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($req1)){  
                         while($data=mysqli_fetch_assoc($req1))
                         {
                             $spe=$data['Specialite'];
@@ -235,6 +236,11 @@
                         </div>
                         </div>
                         </div>";
+                        }
+                        else
+                        {
+                            echo "coach supprime";
+                        }
                     }
                     else
                     {
@@ -254,6 +260,7 @@
                         echo "<th>" . "Mail" . "</th>";
                         echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
+                        if(mysqli_num_rows($req1)){ 
                         while($data=mysqli_fetch_assoc($req1))
                         {
                             $spe1=$data['Specialite'];
@@ -280,6 +287,11 @@
                         </div>
                         </div>
                         </div>";
+                        }
+                        else
+                        {
+                            echo "coach supprime";
+                        }
                     }
                     else
                     {
@@ -299,6 +311,7 @@
                         echo "<th>" . "Mail" . "</th>";
                         echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
+                        if(mysqli_num_rows($req1)){ 
                         while($data=mysqli_fetch_assoc($req1))
                         {
                             $spe2=$data['Specialite'];
@@ -325,6 +338,11 @@
                         </div>
                         </div>
                         </div>";
+                        }
+                        else
+                        {
+                            echo "coach supprime";
+                        }
                     }
                     else
                     {
@@ -345,6 +363,7 @@
                         echo "<th>" . "Mail" . "</th>";
                         echo "<th>" . "Bureau" . "</th>";
                         $req1=mysqli_query($conn, $sql); 
+                        if(mysqli_num_rows($req1)){ 
                         while($data=mysqli_fetch_assoc($req1))
                         {
                             $spe3=$data['Specialite'];
@@ -371,6 +390,11 @@
                         </div>
                         </div>
                         </div>";
+                        }
+                        else
+                        {
+                            echo "coach supprime";
+                        }
                     }
                     else
                     {
@@ -390,7 +414,8 @@
                         echo "<th>" . "Specialité" . "</th>";
                         echo "<th>" . "Mail" . "</th>";
                         echo "<th>" . "Bureau" . "</th>";
-                        $req1=mysqli_query($conn, $sql); 
+                        $req1=mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($req1)){  
                         while($data=mysqli_fetch_assoc($req1))
                         {
                             $spe4=$data['Specialite'];
@@ -417,6 +442,11 @@
                         </div>
                         </div>
                         </div>";
+                        }
+                        else
+                        {
+                            echo "Coach supprime";
+                        }
                     }
                     else
                     {
@@ -436,7 +466,8 @@
                             echo "<th>" . "Specialité" . "</th>";
                             echo "<th>" . "Mail" . "</th>";
                             echo "<th>" . "Bureau" . "</th>";
-                            $req1=mysqli_query($conn, $sql); 
+                            $req1=mysqli_query($conn, $sql);
+                            if(mysqli_num_rows($req1)){ 
                             while($data=mysqli_fetch_assoc($req1))
                             {
                                 $spe5=$data['Specialite'];
@@ -463,6 +494,11 @@
                             </div>
                             </div>
                             </div>";
+                            }
+                            else
+                            {
+                                echo "Coach supprime";
+                            }
                         }
                         else
                         {
