@@ -37,24 +37,12 @@ else
         if ($db_found) {
         $result =mysqli_query($db_handle, "SELECT * FROM client WHERE Mail='$_POST[courrier]' AND MotdePasse='$_POST[motdepasse]'");
         if (mysqli_num_rows($result)) {
-        echo "<table border=\"1\">";
-        echo "<tr>";
-        echo "<th>" . "ID" . "</th>";
-        echo "<th>" . "Mail" . "</th>";
-        echo "<th>" . "Mdp" . "</th>";
-        echo "</tr>";
         while ($data = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $data['mID'] . "</td>";
-        echo "<td>" . $data['Mail'] . "</td>";
-        echo "<td>" . $data['MotdePasse'] . "</td>";
-        echo "</tr>";
         $_SESSION['mID']=$data['mID'];
         $e=$_SESSION['mID'];
         $_SESSION['Mail']=$data['Mail'];
         $_SESSION['MotdePasse']=$data['MotdePasse'];
         }
-        echo "</table>";
         }
         else
         {

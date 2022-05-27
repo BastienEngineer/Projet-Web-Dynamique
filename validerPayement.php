@@ -45,23 +45,10 @@ else
             $res =mysqli_query($db_handle, "SELECT * FROM cb WHERE cbID=$e AND Numero='$_POST[num]' AND Nom='$_POST[nom]' AND Date='$_POST[date]' AND Code='$_POST[code]'");
             if (mysqli_num_rows($res)) 
             {
-            echo "<table border=\"1\">";
-            echo "<tr>";
-            echo "<th>" . "Numero" . "</th>";
-            echo "<th>" . "Nom" . "</th>";
-            echo "</tr>";
-            while ($data = mysqli_fetch_assoc($res)) {
-            echo "<tr>";
-            echo "<td>" . $data['Numero'] . "</td>";
-            echo "<td>" . $data['Nom'] . "</td>";
-            echo "</tr>";
-            }
-            echo "</table>";
             $res1=mysqli_query($db_handle, "SELECT * FROM rdv WHERE clientID=$e AND rID=$rID");
             while ($data1 = mysqli_fetch_assoc($res1)) {
                $jour=$data1['jour'];
                $horaire=$data1['horaire'];
-
             }
             $m="Merci d avoir reserve notre RDV : $spe le $jour a $horaire ";
             $d=$_SESSION['Mail'];
