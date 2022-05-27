@@ -113,7 +113,7 @@ else
     <?php 
     $r=mysqli_query($db_handle, "SELECT * FROM rdv WHERE c_id=$e");
     if (mysqli_num_rows($r)) {
-    echo "<table border=\"1\">";
+    echo "<table class='table'>";
     echo "<tr>";
     echo "<th>" . "Jour" . "</th>";
     echo "<th>" . "Horaire" . "</th>";

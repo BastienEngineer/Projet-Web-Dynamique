@@ -29,7 +29,7 @@
                 <li class="nav-item active"><a href="index.html" class="nav-link text-uppercase font-weight-bold">Accueil <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item"><a href="parcourir.html" class="nav-link text-uppercase font-weight-bold">Tout parcourir</a></li>
                 <li class="nav-item"><a href="recherche.php" class="nav-link text-uppercase font-weight-bold">Recherche</a></li>
-                <li class="nav-item"><a href="rdv.html" class="nav-link text-uppercase font-weight-bold">Rendez-vous</a></li>
+                <li class="nav-item"><a href="rdvClient.php" class="nav-link text-uppercase font-weight-bold">Rendez-vous</a></li>
                 <li class="nav-item"><a href="compte.php" class="nav-link text-uppercase font-weight-bold">Votre compte</a></li>
             </ul>
         </div>
@@ -37,9 +37,9 @@
 </nav>
 
 <div class="container-fluid my-5 py-5">
-<div class="text-center text-white my-5 py-5">
+  <div class="text-center text-white my-5 py-5">
         <div class="my-5 py-5">
-            <div class="row justify-content-center align-items-center h-100">
+            <div class="row my-5 justify-content-center align-items-center h-100">
                 <form action="connexion.php" method="post">
                     <input type="submit" class="btn btn-outline-light btn-lg" value="Admin" name="connexion">
                     <input type="submit" class="btn btn-outline-light btn-lg" value="Coach" name="connexion">

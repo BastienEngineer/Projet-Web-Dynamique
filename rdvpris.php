@@ -1,10 +1,7 @@
-<?php 
-    echo '<link href="css/styles.css" rel="stylesheet" type="text/css" />';  
-    
-    echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Rendez-vous</title>
+    <title>Projet Piscine</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,58 +10,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="js/scripts.js"></script>
-    <script src="js/scripts_E.js"></script>
 </head>
 <body>
 
-    <!-- Navigation-->
-    <nav id="nav" class="navbar navbar-expand-lg fixed-top py-3">
-        <div class="container">
-            <a href="#" class="navbar-brand text-uppercase font-weight-bold"><img src="img/logo.png" alt="Logo" width="180"> </a>
-            <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+<div class="container">
+    <div class="my-5 py-5 text-white text-center">
+        <h2 class="fw-light">Rendez-vous</h2>
+        <p class="pt-5 lead">
+            Nos coachs à votre disposition pour prendre un rendez-vous. Veuillez choisir un rendez-vous pour
+            une activités sportives, des sports de compétition ou pour les salles de sport Omnes.
+        </p>
+    </div>
+</div>
 
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link text-uppercase font-weight-bold">Accueil <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a href="parcourir.html" class="nav-link text-uppercase font-weight-bold">Tout parcourir</a></li>
-                    <li class="nav-item"><a href="recherche.php" class="nav-link text-uppercase font-weight-bold">Recherche</a></li>
-                    <li class="nav-item"><a href="rdv.html" class="nav-link text-uppercase font-weight-bold">Rendez-vous</a></li>
-                    <li class="nav-item"><a href="compte.php" class="nav-link text-uppercase font-weight-bold">Votre compte</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<div class="container text-center my-5 py-5">
 
-    <header class="masthead">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 text-center text-white">
-                    <h1 class="fw-light">Vertically Centered Masthead Content</h1>
-                    <p class="lead">A great starter layout for a landing page</p>
-                    <a href="#content" class="btn btn-outline-light btn-lg js-scroll-trigger" role="button">Prenez un rendez-vous !</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="content" class="py-5">
-        <div class="container">
-            <h2 class="fw-light">Rendez-vous</h2>
-            <p>
-                Nos coachs à votre disposition pour prendre un rendez-vous. Veuillez choisir un rendez-vous pour
-                une activités sportives, des sports de compétition ou pour les salles de sport Omnes.
-            </p>
-        </div>
-    </section>
-    <!-- Section -->
-    <div class="container">';
-    
+<?php 
     $spe=$_GET['spe'];
     $mID=$_GET['mID'];
     $ligne = isset($_POST["ligne"])? $_POST["ligne"] : "";
@@ -78,7 +46,7 @@
     $db_found = mysqli_select_db($db_handle, $database);
     $erreur = "";
     if ($ligne == "") {
-        $erreur .= "Veuillez appuyer sur un bouton !!!";
+        $erreur .= "<p class='lead'>Veuillez appuyer sur un bouton !!!<br></p>";
     }
     if ($erreur == "") {
         if ($db_found)
@@ -87,8 +55,8 @@
             $result = mysqli_query($db_handle, $sql);
             if (mysqli_num_rows($result) != 0)
             {
-	            echo "<p>Deja reserve.</p>";
-                echo "<a class='btn btn-outline-dark' href='rdv.php?mID=$mID&spe=$spe'>Retour</a>";
+	            echo "<p class='lead'>Deja reservé.<br></p>";
+                echo "<a class='btn btn-outline-dark btn-lg my-5' href='rdv.php?mID=$mID&spe=$spe'>Retour</a>";
             }
             else
             {
@@ -106,13 +74,11 @@
     }
     else
     {
-        echo "Erreur:<br>" . $erreur;
-        echo "<a class='btn btn-outline-dark' href='rdv.php?mID=$mID&spe=$spe'>Retour</a>";
+        echo "<p class='lead'>Erreur:<br></p>" . $erreur;
+        echo "<a class='btn btn-outline-dark btn-lg my-5' href='rdv.php?mID=$mID&spe=$spe'>Retour</a>";
     }
-    
-
-
-    echo '    </div>
+    ?>
+</div>
 
     <!-- Footer-->
     <footer id="footer" class="bg-white">
@@ -158,6 +124,4 @@
         </div>
     </footer>
 </body>
-</html>';
-
-?>
+</html>

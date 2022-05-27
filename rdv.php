@@ -1,10 +1,7 @@
-<?php 
-    echo '<link href="css/styles.css" rel="stylesheet" type="text/css" />';  
-    
-    echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Rendez-vous</title>
+    <title>Projet Piscine</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -22,47 +20,18 @@
 </head>
 <body>
 
-    <!-- Navigation-->
-    <nav id="nav" class="navbar navbar-expand-lg fixed-top py-3">
-        <div class="container">
-            <a href="#" class="navbar-brand text-uppercase font-weight-bold"><img src="img/logo.png" alt="Logo" width="180"> </a>
-            <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+<div class="container">
+    <div class="my-5 py-5 text-white text-center">
+        <h2 class="fw-light">Rendez-vous</h2>
+        <p class="pt-5 lead">
+            Nos coachs à votre disposition pour prendre un rendez-vous. Veuillez choisir un rendez-vous pour
+            une activités sportives, des sports de compétition ou pour les salles de sport Omnes.
+        </p>
+    </div>
+</div>
 
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link text-uppercase font-weight-bold">Accueil <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a href="parcourir.html" class="nav-link text-uppercase font-weight-bold">Tout parcourir</a></li>
-                    <li class="nav-item"><a href="recherche.php" class="nav-link text-uppercase font-weight-bold">Recherche</a></li>
-                    <li class="nav-item"><a href="rdv.html" class="nav-link text-uppercase font-weight-bold">Rendez-vous</a></li>
-                    <li class="nav-item"><a href="compte.php" class="nav-link text-uppercase font-weight-bold">Votre compte</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="masthead">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 text-center text-white">
-                    <h1 class="fw-light">Vertically Centered Masthead Content</h1>
-                    <p class="lead">A great starter layout for a landing page</p>
-                    <a href="#content" class="btn btn-outline-light btn-lg js-scroll-trigger" role="button">Prenez un rendez-vous !</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="content" class="py-5">
-        <div class="container">
-            <h2 class="fw-light">Rendez-vous</h2>
-            <p>
-                Nos coachs à votre disposition pour prendre un rendez-vous. Veuillez choisir un rendez-vous pour
-                une activités sportives, des sports de compétition ou pour les salles de sport Omnes.
-            </p>
-        </div>
-    </section>
-    <!-- Section -->
-    <div class="container">';
+<div class="container text-center">
+<?php 
     
     $c_id=0;
     $spe=$_GET['spe'];
@@ -86,71 +55,71 @@
         {
             $array = array($data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10], $data[11], $data[12]);
         }
-        echo '<table border="1" class="tableRDV"><tr><td>Specialite</td><td>Coach</td>';
+        echo '<table class="table table-bordered tableRDV"><tr><td class="table-dark">Specialité</td><td class="table-dark">Coach</td>';
         if($array[0] == 1 || $array[1] == 1)
         {
             if($array[0] == 0 || $array[1] == 0)
             {
-                echo '<td>Lundi</td>';
+                echo '<td class="table-dark">Lundi</td>';
             }
             else
             {
-                echo '<td colspan="2">Lundi</td>';
+                echo '<td class="table-dark" colspan="2">Lundi</td>';
             }
         }
         if($array[2] == 1 || $array[3] == 1)
         {
             if($array[2] == 0 || $array[3] == 0)
             {
-                echo '<td>Mardi</td>';
+                echo '<td class="table-dark">Mardi</td>';
             }
             else
             {
-                echo '<td colspan="2">Mardi</td>';
+                echo '<td class="table-dark" colspan="2">Mardi</td>';
             }
         }
         if($array[4] == 1 || $array[5] == 1)
         {
             if($array[4] == 0 || $array[5] == 0)
             {
-                echo '<td>Mercredi</td>';
+                echo '<td class="table-dark">Mercredi</td>';
             }
             else
             {
-                echo '<td colspan="2">Mercredi</td>';
+                echo '<td class="table-dark" colspan="2">Mercredi</td>';
             }
         }
         if($array[6] == 1 || $array[7] == 1)
         {
             if($array[6] == 0 || $array[7] == 0)
             {
-                echo '<td>Jeudi</td>';
+                echo '<td class="table-dark">Jeudi</td>';
             }
             else
             {
-                echo '<td colspan="2">Jeudi</td>';
+                echo '<td class="table-dark" colspan="2">Jeudi</td>';
             }
         }
         if($array[8] == 1 || $array[9] == 1)
         {
             if($array[8] == 0 || $array[9] == 0)
             {
-                echo '<td>Vendredi</td>';
+                echo '<td class="table-dark">Vendredi</td>';
             }
             else
             {
-                echo '<td colspan="2">Vendredi</td>';
+                echo '<td class="table-dark" colspan="2">Vendredi</td>';
             }
         }
         if($array[10] == 1 || $array[11] == 1)
         {
             if($array[10] == 0 || $array[11] == 0)
             {
-                echo '<td>Samedi</td>';
+                echo '<td class="table-dark">Samedi</td>';
             }
             else
             {
-                echo '<td colspan="2">Samedi</td>';
+                echo '<td class="table-dark" colspan="2">Samedi</td>';
             }
         }
         echo '</tr>';
@@ -288,15 +257,20 @@
         echo '<input type="hidden" id="ligne" name="ligne" />';
         echo '<input type="hidden" id="colonne" name="colonne" />';
         echo '<input type="hidden" id="c_id" name="c_id" />';
-        echo '<input type="submit" value="Prendre rendez-vous" />';
-        echo "<a class='btn btn-outline-dark' href='client.php?spe=$spe'>Retour</a>";
+        echo '
+        <div class="row justify-content-center align-items-center">
+        <div class="col-lg-4 my-4 py-4 text-center">';
+        echo "<a class='btn btn-outline-dark btn-lg px-5 mx-2' href='client.php?spe=$spe'>Retour</a>";
+        echo '<input class="btn btn-outline-dark btn-lg mx-2" type="submit" value="Prendre rendez-vous" />
+        </div>
+        </div>';
         echo '</form>';
     }
-
+    ?>
 
     
 
-    echo '    </div>
+</div>
 
     <!-- Footer-->
     <footer id="footer" class="bg-white">
@@ -342,6 +316,4 @@
         </div>
     </footer>
 </body>
-</html>';
-
-?>
+</html>

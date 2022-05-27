@@ -49,7 +49,7 @@ $horaire="";
                     $jour=$data['jour'];
                     $horaire=$data['horaire'];
                     $spe=$data['spe'];
-                    echo "<a class='btn btn-outline-light' href='annulerRDV.php?rID=$rdv'>" .$jour. " " .$horaire. " " .$spe. "</a>";
+                    echo "<a class='btn btn-light' href='annulerRDV.php?rID=$rdv'>" .$jour. " " .$horaire. " " .$spe. "</a>";
                 }
             }
             else
