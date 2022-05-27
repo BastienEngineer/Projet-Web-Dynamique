@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 27 mai 2022 à 09:51
--- Version du serveur : 5.7.36
--- Version de PHP : 7.4.26
+-- Généré le :  ven. 27 mai 2022 à 14:43
+-- Version du serveur :  5.7.26
+-- Version de PHP :  7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `omnes`
+-- Base de données :  `omnes`
 --
 
 -- --------------------------------------------------------
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `Tel` varchar(255) NOT NULL,
   `CarteE` int(10) NOT NULL,
   PRIMARY KEY (`mID`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `client`
@@ -99,7 +100,8 @@ CREATE TABLE IF NOT EXISTS `client` (
 INSERT INTO `client` (`mID`, `Nom`, `Prenom`, `Mail`, `MotdePasse`, `Adresse`, `Ville`, `Postal`, `Pays`, `Tel`, `CarteE`) VALUES
 (20, 'Coupart', 'Clarice', 'clarice@gmail.com ', 'clarice', 'Grand Rue', 'Marseille', 13005, 'France', '0494747768', 127675),
 (21, 'Gosselin', 'Landers', 'landers@gmail.com ', 'landers', 'Place de la Gare', 'Colombes', 92700, 'France', '0186680100', 173088),
-(22, 'test', 'test', 'test@gmail.com', '123', 'rue', 'Paris', 75000, 'France', '0601010101', 222222);
+(22, 'test', 'test', 'test@gmail.com', '123', 'rue', 'Paris', 75000, 'France', '0601010101', 222222),
+(24, 't', 't', 't@gmail.com', '1', 'a', 'a', 45000, 'f', '0606060606', 111111);
 
 -- --------------------------------------------------------
 
@@ -117,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `coach` (
   `Mail` varchar(255) NOT NULL,
   `Bureau` varchar(255) NOT NULL,
   PRIMARY KEY (`cID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `coach`
@@ -149,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `cv` (
   `formation` varchar(255) NOT NULL,
   `experience` varchar(255) NOT NULL,
   PRIMARY KEY (`cvID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `cv`
@@ -166,7 +168,7 @@ INSERT INTO `cv` (`cvID`, `prenom`, `formation`, `experience`) VALUES
 (8, 'Antoine', 'joueur pro de rugby dans l equipe de France', 'BAC S'),
 (9, 'Rafael', 'Joueur de tennis professionnel', 'CPJEPS'),
 (10, 'Laure', 'nageuse de competition', 'BPJEPS'),
-(11, 'Matthieu', 'Entraineur de plongeon', 'DEJEPS');
+(11, 'Matthieu', 'Prof de plongeon', 'Diplome de plongeon');
 
 -- --------------------------------------------------------
 
@@ -181,7 +183,15 @@ CREATE TABLE IF NOT EXISTS `echange` (
   `dest` int(11) NOT NULL,
   `emet` int(11) NOT NULL,
   PRIMARY KEY (`msgID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf32;
+
+--
+-- Déchargement des données de la table `echange`
+--
+
+INSERT INTO `echange` (`msgID`, `sms`, `dest`, `emet`) VALUES
+(1, 'c', 22, 1),
+(3, 'coucou matthieu t la', 16, 22);
 
 -- --------------------------------------------------------
 
@@ -222,7 +232,7 @@ INSERT INTO `emploistemps` (`c_id`, `lundi_AM`, `lundi_PM`, `mardi_AM`, `mardi_P
 (8, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0),
 (9, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1),
 (10, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1),
-(11, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1);
+(11, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -238,14 +248,14 @@ CREATE TABLE IF NOT EXISTS `mail` (
   `dest` varchar(255) NOT NULL,
   `emet` varchar(255) NOT NULL,
   PRIMARY KEY (`eID`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `mail`
 --
 
 INSERT INTO `mail` (`eID`, `destID`, `email`, `dest`, `emet`) VALUES
-(51, 22, 'Merci d avoir reserve notre RDV : musculation le Vendredi a 10h40 ', 'test@gmail.com', 'Service d Omnes Sport ');
+(2, 22, 'Merci d avoir reserve notre RDV : musculation le Mardi a 9h00 ', 'test@gmail.com', 'Service d Omnes Sport ');
 
 -- --------------------------------------------------------
 
@@ -264,25 +274,20 @@ CREATE TABLE IF NOT EXISTS `rdv` (
   `ligne` int(11) NOT NULL,
   `colonne` int(11) NOT NULL,
   `reserve` tinyint(1) NOT NULL,
-  PRIMARY KEY (`rID`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf32;
+  PRIMARY KEY (`rID`),
+  KEY `c_id` (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf32;
 
 --
 -- Déchargement des données de la table `rdv`
 --
 
 INSERT INTO `rdv` (`rID`, `c_id`, `clientID`, `jour`, `horaire`, `spe`, `ligne`, `colonne`, `reserve`) VALUES
-(51, 1, 22, 'Vendredi', '10h40', 'musculation', 5, 4, 1);
+(2, 1, 22, 'Mardi', '9h00', 'musculation', 0, 1, 1);
 
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `cb`
---
-ALTER TABLE `cb`
-  ADD CONSTRAINT `cb_ibfk_1` FOREIGN KEY (`cbID`) REFERENCES `client` (`mID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `cv`
@@ -295,6 +300,18 @@ ALTER TABLE `cv`
 --
 ALTER TABLE `emploistemps`
   ADD CONSTRAINT `emploistemps_ibfk_1` FOREIGN KEY (`c_id`) REFERENCES `coach` (`cID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `mail`
+--
+ALTER TABLE `mail`
+  ADD CONSTRAINT `mail_ibfk_1` FOREIGN KEY (`eID`) REFERENCES `rdv` (`rID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `rdv`
+--
+ALTER TABLE `rdv`
+  ADD CONSTRAINT `rdv_ibfk_1` FOREIGN KEY (`c_id`) REFERENCES `coach` (`cID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
