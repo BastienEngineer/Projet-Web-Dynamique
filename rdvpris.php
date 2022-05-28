@@ -51,7 +51,7 @@
     if ($erreur == "") {
         if ($db_found)
         {
-            $sql = 'SELECT * FROM `rdv` WHERE `ligne` = ' . $ligne . ' and `colonne` = ' . $colonne;
+            $sql = 'SELECT * FROM `rdv` WHERE `clientID` = ' . $mID . ' and `spe` = ' . $spe . ' and `ligne` = ' . $ligne . ' and `colonne` = ' . $colonne;
             $result = mysqli_query($db_handle, $sql);
             if (mysqli_num_rows($result) != 0)
             {
