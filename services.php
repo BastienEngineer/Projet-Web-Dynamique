@@ -50,8 +50,15 @@
         </div>
         <div class="col-lg-8 py-2">
           <div class="tab-content text-white">
-            <div class="tab-pane fade" id="o1">Contenu du premier onglet</div>
-            <div class="tab-pane fade" id="o2">Contenu du deuxième onglet</div>
+            <div class="tab-pane fade" id="o1">
+            <p class="lead">Tibo Inshape</p>
+            <p class="lead">Sissy Mua</p>
+            <p class="lead">Leslie Sansone</p>
+            </div>
+            <div class="tab-pane fade" id="o2">
+            <p class="lead">Horaires de la salle :
+            09h-18h</p>
+            </div>
             <div class="tab-pane fade" id="o3">
             <p class="lead">1. Essuyez vos appareils
             <br>2. Ne soyez pas en retard aux cours collectifs
@@ -68,9 +75,19 @@
             <p>Veuillez trouver ci-joint quelques réponses aux questions fréquemment posées.</p>
             <strong>Le port du masque est-il obligatoire ?</strong>
             <br>Non, depuis le 28 février, le port du masque n’est plus obligatoire à l’intérieur du club.
+            <br><br>
+            <strong>Quelle tenue dois-je prévoir pour m’entraîner ?</strong>
+            <br>
+              Une tenue de sport, des baskets propres et une serviette.
+              Pour rappel les tongs et jeans sont interdits.
+            <br>
             </div>
-            <div class="tab-pane fade" id="o5">Contenu du cinquieme onglet</div>
-            <div class="tab-pane fade" id="o6">Contenu du sixieme onglet</div>
+            <div class="tab-pane fade" id="o5">
+            La meilleure solution pour être en forme à l’entraînement : 
+            <br>Manger trois à quatre heures avant l’exercice pour laisser le temps à l'organisme de digérer le repas. 
+            <br>En effet, il vaut mieux éviter que l'appareil digestif ne travaille durant l'activité !
+            </div>
+            <div class="tab-pane fade" id="o6">Veuillez prendre rendez-vous avec le gynécologue en contactant directement la salle.</div>
           </div>
         </div>
     </div>

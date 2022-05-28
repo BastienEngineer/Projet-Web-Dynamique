@@ -70,8 +70,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                                 <h4 class="card-title">Musculation</h4>
-                                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
+                                <p class="card-text text-justify">Méthode d'entraînement sportif visant à accroître le volume et la force musculaire.</p>
                                 <form action="" method="post">
                                     <input name="b1" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                                 </form>
@@ -92,8 +91,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Fitness</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">Ensemble d'activités de mise en forme comprenant de la musculation, du stretching et du cardio-training.</p>
                             <form action="" method="post">
                                 <input name="b2" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
@@ -114,8 +112,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Biking</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">Le biking est un cours de cyclisme indoor, qui consiste en l'utilisation de vélos fixes en salle, et en groupe, le tout en musique.</p>
                             <form action="" method="post">
                                 <input name="b3" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
@@ -136,8 +133,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title"> Cardio-Training</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">Le cardio-training est un entraînement qui joue sur le contrôle de la fréquence cardiaque lors d'un effort.</p>
                             <form action="" method="post">
                                 <input name="b4" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
@@ -158,8 +154,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Cours Collectifs</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">Les cours collectifs ont comme particularité de se sociabiliser avec des personnes ayant les mêmes objectifs.</p>
                             <form action="" method="post">
                                 <input name="b5" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>

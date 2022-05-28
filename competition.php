@@ -70,8 +70,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                                 <h4 class="card-title">Basketball</h4>
-                                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
+                                <p class="card-text text-justify">Le but de ce sport est de marquer plus de points que l'équipe adverse en marquant des paniers.</p>
                                 <form action="" method="post">
                                     <input name="b1" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                                 </form>
@@ -92,8 +91,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Football</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">L'objectif est de marquer plus de buts que l'équipe adverse en mettant le ballon dans la cage de buts.</p>
                             <form action="" method="post">
                                 <input name="b2" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
@@ -114,8 +112,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Rugby</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">Il faut marquer derrière la ligne de but de l'adversaire ou faire passer entre les deux poteaux.</p>
                             <form action="" method="post">
                                 <input name="b3" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
@@ -136,8 +133,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Tennis</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">Le tennis est un sport de raquette qui oppose souvent deux joueurs.</p>
                             <form action="" method="post">
                                 <input name="b4" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
@@ -158,8 +154,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Natation</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">La natation consiste à parcourir le plus vite possible une distance à la nage.</p>
                             <form action="" method="post">
                                 <input name="b5" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
@@ -180,8 +175,7 @@
                         alt="Card image cap">
                         <div class="card-body text-center">
                             <h4 class="card-title">Plongeon</h4>
-                            <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                            <p class="card-text text-justify">Le plongeon consiste à se lancer dans l'eau d'une hauteur plus ou moins importante.</p>
                             <form action="" method="post">
                                 <input name="b6" type="submit" value="Sélectionner" class="btn btn-outline-primary"></input>
                             </form>
