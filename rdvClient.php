@@ -1,3 +1,4 @@
+<!-- Client se connecte sur la page RDV -->
 <!DOCTYPE html>
 <html>
 <head>

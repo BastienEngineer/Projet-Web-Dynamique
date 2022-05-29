@@ -4,6 +4,7 @@ $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
 $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 
+// si l admin est toujours connecte il garde ses infos pour se connecter en permanence
 if (isset($_SESSION['aID'])) {
     $nom=$_SESSION['Nom'];
     $prenom=$_SESSION['Prenom'];
@@ -26,15 +27,18 @@ if ($erreur != "") {
 }
 else
 {
+    // si le bouton pour se connecter est declenche
     if (isset($_POST["admin"])) {
         $database = "omnes";
         //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
         $db_handle = mysqli_connect('localhost', 'root', '');
         $db_found = mysqli_select_db($db_handle, $database);
         if ($db_found) {
+        // trouve le bon admin avec ses bon identifiants
         $result =mysqli_query($db_handle, "SELECT * FROM admin WHERE Nom='$_POST[nom]' AND Prenom='$_POST[prenom]' AND Mail='$_POST[courrier]' ORDER BY aID ");
         if (mysqli_num_rows($result)) {
         while ($data = mysqli_fetch_assoc($result)) {
+        // les identifiants sont en session (memoire)
         $_SESSION['aID']=$data['aID'];
         $_SESSION['Nom']=$data['Nom'];
         $_SESSION['Prenom']=$data['Prenom'];
@@ -54,7 +58,7 @@ else
     }  
 }
 ?>
-
+<!-- Choix de l Admin -->
 <!DOCTYPE html>
 <html>
 <head>

@@ -7,6 +7,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 $e=$_SESSION['mID'];
 $rdv=$_GET['rID'];
 if ($db_found) {
+    // on supprime le rdv ainsi que son mail de confirmation egalement
     $delete="DELETE FROM rdv WHERE rID=$rdv";
     $r=mysqli_query($db_handle,$delete);
     $deleteMail="DELETE FROM mail WHERE eID=$rdv";

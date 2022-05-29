@@ -5,6 +5,7 @@ $mdp = isset($_POST["motdepasse"])? $_POST["motdepasse"] : "";
 $erreur = "";
 $e=0;
 
+// garder la session du client connecte 
 if (isset($_SESSION['mID'])) {
     $e=$_SESSION['mID'];
     $mail=$_SESSION['Mail'];
@@ -19,7 +20,7 @@ if ($mdp == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:clientLogin1.php"); 
+    header("Location:clientLogin1.php"); // en cas d erreur 
 }
 else
 {
@@ -27,6 +28,7 @@ else
     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
+    // pour que le client soit connecte
     if (isset($_POST["client"])) {
         if ($db_found) {
         $result =mysqli_query($db_handle, "SELECT * FROM client WHERE Mail='$_POST[courrier]' AND MotdePasse='$_POST[motdepasse]'");
@@ -52,6 +54,7 @@ else
 }
 ?>
 
+<!-- Choix du Client dans la page RDV du navigation -->
 <!DOCTYPE html>
 <html>
 <head>

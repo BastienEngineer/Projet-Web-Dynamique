@@ -22,12 +22,14 @@ if ($erreur != "") {
 }
 else
 {
+// Pour creer le CV
 if (isset($_POST["cv"])) {
     $database = "omnes";
     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
     if ($db_found) {
+    // on verifie le bon coach par son mail
     $r=mysqli_query($db_handle, "SELECT Mail FROM coach WHERE Mail='$mail'");
     if(mysqli_num_rows($r))
     {
@@ -36,9 +38,11 @@ if (isset($_POST["cv"])) {
             $idCoach=$data['cID'];
             $prenomCoach=$data['Prenom'];
         }
+        // on verifie s il existe pas un CV deja
         $verifCV=mysqli_query($db_handle, "SELECT * FROM cv WHERE cvID=$idCoach");
         if(mysqli_num_rows($r))
         {
+            // on le supprime et on le cree pour l insere
             $sql2="DELETE FROM cv WHERE cvID=$idCoach AND prenom='$prenomCoach' ";
             $result2 =mysqli_query($db_handle, $sql2);
             $sql="INSERT INTO cv(cvID,prenom,formation,experience)
@@ -47,10 +51,12 @@ if (isset($_POST["cv"])) {
         }
         else
         {
+            // on le cree pour inserer dans la BDD
             $sql="INSERT INTO cv(cvID,prenom,formation,experience)
             VALUES($idCoach,'$prenomCoach','$formation','$experience')";
             $result =mysqli_query($db_handle, $sql);
         }
+        // on cree son CV par XML
         $r=mysqli_query($db_handle, "SELECT * FROM cv WHERE cvID=$idCoach");
         $document = new DOMDocument( "1.0", "UTF-8" );
         $document->preserveWhiteSpace = false;

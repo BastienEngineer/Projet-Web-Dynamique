@@ -1,3 +1,4 @@
+<!-- Votre choix de connexion -->
 <?php
 $choice = isset($_POST["connexion"])? $_POST["connexion"] : "";
 

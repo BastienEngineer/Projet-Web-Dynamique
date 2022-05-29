@@ -11,6 +11,7 @@ $dest="";
 $email="";
 ?>
 
+<!-- Mail de confirmation du RDV -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +41,7 @@ $email="";
     <div class="card-body">
     <?php 
         if ($db_found) {
+            // on affiche le mail du rdv choisi
             $getID="SELECT destID FROM mail WHERE destID=(SELECT mID FROM client WHERE mID=$e)";
             $r=mysqli_query($db_handle,$getID);
             if (mysqli_num_rows($r)) 

@@ -1,3 +1,4 @@
+<!-- Page apres avoir pris le RDV pour verifier le RDV -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,21 +47,23 @@
     $db_found = mysqli_select_db($db_handle, $database);
     $erreur = "";
     if ($ligne == "") {
-        $erreur .= "<p class='lead'>Veuillez appuyer sur un bouton !!!<br></p>";
+        $erreur .= "<p class='lead'>Veuillez appuyer sur un bouton !!!<br></p>"; // en cas ou le client n a pas pris de rdv
     }
     if ($erreur == "") {
         if ($db_found)
         {
+            // on trouve le rdv en cas ou si c est deja pris
             $sql = 'SELECT * FROM `rdv` WHERE `clientID` = ' . $mID . ' and `spe` = ' . $spe . ' and `ligne` = ' . $ligne . ' and `colonne` = ' . $colonne;
             $result = mysqli_query($db_handle, $sql);
             if (mysqli_num_rows($result) != 0)
             {
-	            echo "<p class='lead'>Deja reservé.<br></p>";
+	            echo "<p class='lead'>Deja reservé.<br></p>"; // affiche un message
                 echo "<a class='btn btn-outline-dark btn-lg my-5' href='rdv.php?mID=$mID&spe=$spe'>Retour</a>";
             }
             else
             {
                 $i=0;
+                // sinon on cree le RDV puis on l insere dans la BDD
                 $sql = 'INSERT INTO `rdv` VALUES ("' . $i . '", "' . $c_id . '", "' . $mID . '", "' . $jour . '", "' . $horaire . '","' . $spe . '" ,"' . $ligne . '", "' . $colonne . '", "' . 1 . '")';
                 $result = mysqli_query($db_handle, $sql);
                 $sql1='SELECT * FROM `rdv` WHERE `ligne` = ' . $ligne . ' and `colonne` = ' . $colonne;

@@ -7,6 +7,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 $d=$_GET['mID'];
 $e=$_SESSION['cID'];
 if ($db_found) {
+    // quand on envoie le message et on l insere dans la BDD
     if(isset($_POST['send']))
     {
         $m=$_POST['message'];
@@ -22,7 +23,7 @@ else
     echo "<br>Database not found";
 }  
 ?>
-
+<!-- Chatroom -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,6 +67,7 @@ else
 <div class="container d-flex justify-content-center">
 <div class="card mt-5 mb-5" style="width:50%;">
     <?php
+    // afficher les messages en temps reel
     $getmsg=mysqli_query($db_handle, "SELECT * FROM echange WHERE dest=$e AND emet=$d OR dest=$d AND emet=$e");
     while ($data = mysqli_fetch_assoc($getmsg)) {
         if($data['dest'] == $d)

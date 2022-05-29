@@ -1,3 +1,4 @@
+<!-- Afficher le CV du coach selectionne -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,8 +28,10 @@
     <div class="card-body">
         <?php
         $prenomCV=$_GET["p"];
+        // on recupere les donnees dans le fichier XML 
         $xmldata = simplexml_load_file("xml/$prenomCV.xml") or die("Failed to load");
         foreach($xmldata->children() as $cv) {    
+        // on affiche ces details du CV sur cette page  
         ?>
         <div class="form-group row">
         <label for="prenom" class="col-sm-6 col-form-label">Prénom</label>

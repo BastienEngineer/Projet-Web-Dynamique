@@ -1,3 +1,4 @@
+<!-- Connexion Client -->
 <!DOCTYPE html>
 <html>
 <head>

@@ -3,6 +3,7 @@
  $query ="SELECT * FROM coach ORDER BY cID DESC";  
  $result = mysqli_query($connect, $query);  
  ?>  
+ <!-- Rechercher les coachs -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +46,7 @@ table
         </div>
     </div>
 </nav>
-
+<!-- Afficher le tableau des coachs -->
 <div class="container-fluid my-5 py-5"> 
 <div class="my-5 py-5"> 
 <h3 class="text-center text-white font-weight-light">Tableau de données des coachs</h3>  

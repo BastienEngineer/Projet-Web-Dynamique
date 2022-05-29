@@ -1,3 +1,4 @@
+<!-- Connexion du Client ou creer son compte -->
 <?php
 $choice = isset($_POST["login"])? $_POST["login"] : "";
 $spe=$_GET["spe"];

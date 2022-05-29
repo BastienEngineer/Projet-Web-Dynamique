@@ -1,3 +1,4 @@
+<!-- Saisie du Client pour creer son compte -->
 <!DOCTYPE html>
 <html>
 <head>

@@ -9,7 +9,7 @@ $rdv="";
 $jour="";
 $horaire="";
 ?>
-
+<!-- Liste de RDV du client pour annuler par la suite -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +40,7 @@ $horaire="";
     <div class="card-body">
     <?php 
         if ($db_found) {
+            // on affiche tous les RDV (avec l heure, le jour et la specialite du sport) du client
             $getID="SELECT * FROM rdv WHERE clientID=$e";
             $r=mysqli_query($db_handle,$getID);
             if (mysqli_num_rows($r)) 

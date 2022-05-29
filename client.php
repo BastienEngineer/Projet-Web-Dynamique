@@ -7,6 +7,7 @@ $spe=$_GET["spe"];
 $e=0;
 $d="";
 
+// garder la session du client connecte 
 if (isset($_SESSION['mID'])) {
     $e=$_SESSION['mID'];
     $mail=$_SESSION['Mail'];
@@ -21,7 +22,7 @@ if ($mdp == "") {
 }
 if ($erreur != "") {
     echo "Erreur: <br>" . $erreur;
-    header("Location:clientLogin.php?spe=$spe"); 
+    header("Location:clientLogin.php?spe=$spe"); // en cas d erreur 
 }
 else
 {
@@ -33,6 +34,7 @@ else
     while ($data = mysqli_fetch_assoc($res)) {
         $d=$data['cID'];
     }
+    // pour que le client soit connecte
     if (isset($_POST["client"])) {
         if ($db_found) {
         $result =mysqli_query($db_handle, "SELECT * FROM client WHERE Mail='$_POST[courrier]' AND MotdePasse='$_POST[motdepasse]'");
@@ -58,6 +60,7 @@ else
 }
 ?>
 
+<!-- Choix du Client -->
 <!DOCTYPE html>
 <html>
 <head>

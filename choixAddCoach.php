@@ -1,3 +1,4 @@
+<!-- Saisie pour ajouter ou supprimmer un coach -->
 <!DOCTYPE html>
 <html>
 <head>

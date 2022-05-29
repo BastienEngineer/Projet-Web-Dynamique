@@ -1,3 +1,4 @@
+<!-- Saisie des coordonnes bancaires pour payer -->
 <!DOCTYPE html>
 <html>
 <head>

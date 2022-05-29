@@ -1,3 +1,4 @@
+<!-- Prendre un rdv -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,7 @@
 
 <div class="container text-center">
 <?php 
-    
+    // on affiche l emploi du temps du coach selectionne
     $c_id=0;
     $spe=$_GET['spe'];
     $mID=$_GET['mID'];
@@ -248,6 +249,7 @@
             }
             echo '</tr>';
         }
+        // on convertit la ligne et la colonne du tableau avec les horaires du RDV grace au fichier js
         echo '</table>';
         echo "<form action='rdvpris.php?mID=$mID&spe=$spe' method='post'>";
         echo '<div id="jour" ></div>';

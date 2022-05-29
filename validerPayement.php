@@ -31,6 +31,7 @@ if ($erreur != "") {
 }
 else
 {
+    // quand on paye 
     if(isset($_POST["payer"])) {
         $database = "omnes";
         //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
@@ -38,10 +39,12 @@ else
         $db_found = mysqli_select_db($db_handle, $database);
         if ($db_found) {
         $e=$_SESSION['mID'];
+        // on selectionne le bon client qui paye
         $getID="SELECT cbID FROM cb WHERE cbID= (SELECT mID FROM client WHERE mID=$e)";
         $r=mysqli_query($db_handle,$getID);
         if (mysqli_num_rows($r)) 
         {
+            // on verifie ses donnees bancaires depuis la BDD
             $res =mysqli_query($db_handle, "SELECT * FROM cb WHERE cbID=$e AND Numero='$_POST[num]' AND Nom='$_POST[nom]' AND Date='$_POST[date]' AND Code='$_POST[code]'");
             if (mysqli_num_rows($res)) 
             {
@@ -52,6 +55,7 @@ else
             }
             $m="Merci d avoir reserve notre RDV : $spe le $jour a $horaire ";
             $d=$_SESSION['Mail'];
+            // on cree le mail pour confirmer le RDV
             $insert="INSERT INTO mail(eID,destID,email,dest,emet)
             VALUES($rID,$e,'$m','$d','Service d Omnes Sport ')";
             $result =mysqli_query($db_handle, $insert);
@@ -64,6 +68,7 @@ else
         }
         else
         {
+            // sinon on insere ces donnees saisies en cas ou il reserve pour la 1ere fois son rdv 
             $sql = "INSERT INTO cb (cbID, Numero, Nom, Date, Code)
             VALUES($e, '$_POST[num]', '$_POST[nom]', '$_POST[date]', '$_POST[code]')";
             $result =mysqli_query($db_handle, $sql);
@@ -74,6 +79,7 @@ else
             }
             $m="Merci d avoir reserve notre RDV : $spe le $jour a $horaire ";
             $dMail=$_SESSION['Mail'];
+            // on cree le mail pour confirmer le RDV
             $ins="INSERT INTO mail(eID,destID,email,dest,emet)
             VALUES($rID,$e,'$m','$dMail','Service d Omnes Sport')";
             $result1 =mysqli_query($db_handle, $ins);

@@ -1,3 +1,4 @@
+<!-- Saisie du Client pour se connecter a son compte -->
 <!DOCTYPE html>
 <html>
 <head>

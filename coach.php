@@ -1,3 +1,4 @@
+<!-- Quand le coach est connecte -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +28,8 @@ $mail = isset($_POST["courrier"])? $_POST["courrier"] : "";
 $nomClient=0;
 $prenomClient="";
 $e=0;
+
+// garder la session du coach connecte 
 if (isset($_SESSION['cID'])) {
     $nom=$_SESSION['Nom'];
     $prenom=$_SESSION['Prenom'];
@@ -54,6 +57,7 @@ else
     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
+    // pour que le coach soit connecte
     if (isset($_POST["coach"])) {
         if ($db_found) {
         $result =mysqli_query($db_handle, "SELECT * FROM coach WHERE Nom='$_POST[nom]' AND Prenom='$_POST[prenom]' AND Mail='$_POST[courrier]' ORDER BY cID ");
@@ -75,6 +79,7 @@ else
             echo "<br>Database not found";
         }
     }
+    // Afficher les clients comme des messages prives (communiquer)
     $res=mysqli_query($db_handle, "SELECT mID,Prenom FROM client");
     ?>
     <div class="container my-5 py-5">
@@ -85,7 +90,7 @@ else
     <?php 
     while ($data = mysqli_fetch_assoc($res)) {
         $d=$data['mID'];
-        echo "<a class='btn btn-outline-light' href='communiquer.php?mID=$d'>" . $data['Prenom'] . "</a>";
+        echo "<a class='btn btn-outline-light' href='communiquer.php?mID=$d'>" . $data['Prenom'] . "</a>"; // par leur prenom des clients 
     }
     ?>
     <a class="btn btn-outline-light btn-lg mt-5" href="deconnexion.php">Deconnexion</a>
@@ -99,6 +104,7 @@ else
     <div class="row justify-content-center align-items-center">
     <div class="col-lg-4 col-md-6 my-4 py-4 text-center">
     <?php 
+    // Afficher toutes les consultations des coachs (rdv)
     $r=mysqli_query($db_handle, "SELECT * FROM rdv WHERE c_id=$e");
     if (mysqli_num_rows($r)) {
     echo "<table class='table'>";
