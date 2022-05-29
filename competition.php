@@ -1,3 +1,4 @@
+<!-- Competition -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -186,6 +187,7 @@
         </div>
     </div>
 </div>
+<!-- Afficher les details de chaque prof de sport (compet) -->
 <?php
                 $conn=mysqli_connect('localhost','root','');
                 $d=mysqli_select_db($conn,'omnes');

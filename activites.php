@@ -1,3 +1,4 @@
+<!-- Activites -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -166,6 +167,7 @@
 
     </div>
 </div>
+<!-- Afficher les details de chaque prof de sport -->
             <?php
                 $conn=mysqli_connect('localhost','root','');
                 $d=mysqli_select_db($conn,'omnes');
